@@ -1,0 +1,23 @@
+{
+  "operationId": "listFilms",
+  "method": "GET",
+  "path": "/films/",
+  "request": {
+    "page": 1
+  },
+  "response": {
+    "count": 6,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "title": "A New Hope",
+        "episode_id": 4,
+        "director": "George Lucas",
+        "producer": "Gary Kurtz, Rick McCallum",
+        "release_date": "1977-05-25",
+        "url": "https://swapi.dev/api/films/1/"
+      }
+    ]
+  }
+}

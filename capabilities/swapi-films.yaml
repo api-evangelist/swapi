@@ -1,0 +1,123 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SWAPI — Films
+  description: >-
+    SWAPI Films. 2 operations (list + get). Lead operation: List All Films.
+    Films appearing in the Star Wars canonical dataset.
+    Self-contained Naftiko capability covering one SWAPI business surface.
+  tags:
+    - SWAPI
+    - Star Wars
+    - Films
+  created: '2026-05-29'
+  modified: '2026-05-29'
+binds:
+  - namespace: env
+    keys: {}
+capability:
+  consumes:
+    - type: http
+      namespace: swapi-films
+      baseUri: https://swapi.dev/api
+      description: SWAPI — Films business capability. Self-contained, no shared references.
+      resources:
+        - name: films
+          path: /films/
+          operations:
+            - name: listFilms
+              method: GET
+              description: List All Films
+              inputParameters:
+                - name: search
+                  in: query
+                  type: string
+                  required: false
+                  description: Case-insensitive partial match against the film title.
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: One-based page number for paginated list responses.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+            - name: getFilm
+              method: GET
+              description: Get Film By Id
+              inputParameters:
+                - name: id
+                  in: path
+                  type: integer
+                  required: true
+                  description: Numeric SWAPI identifier for the film.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: swapi-films-rest
+      port: 8080
+      description: REST adapter for SWAPI — Films. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/films
+          name: films
+          description: REST surface for Films.
+          operations:
+            - method: GET
+              name: listFilms
+              description: List All Films
+              call: swapi-films.listFilms
+              with:
+                search: rest.search
+                page: rest.page
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/films/{id}
+          name: films-by-id
+          description: REST surface for a single Film.
+          operations:
+            - method: GET
+              name: getFilm
+              description: Get Film By Id
+              call: swapi-films.getFilm
+              with:
+                id: rest.id
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: swapi-films-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for SWAPI — Films. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-films
+          description: List All Films
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: swapi-films.listFilms
+          with:
+            search: tools.search
+            page: tools.page
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-film
+          description: Get Film By Id
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: swapi-films.getFilm
+          with:
+            id: tools.id
+          outputParameters:
+            - type: object
+              mapping: $.

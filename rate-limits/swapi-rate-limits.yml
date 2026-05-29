@@ -1,0 +1,53 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: SWAPI
+providerId: swapi
+created: '2026-05-29'
+modified: '2026-05-29'
+tags:
+  - Star Wars
+  - Open Source
+  - Public API
+  - Rate Limiting
+description: >-
+  SWAPI does not publish documented hard rate limits. The swapi.dev and swapi.tech
+  mirrors are community-funded, so consumers are asked to be polite — cache aggressively,
+  avoid tight scraping loops, and respect 429 / 503 responses if they ever surface.
+  This file captures the polite-use convention, not a contractual limit.
+headers:
+  limit: null
+  remaining: null
+  reset: null
+  retryAfter: Retry-After
+  policy: null
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serviceUnavailable: 503
+limits:
+  - tier: free
+    name: Polite-Use Convention (Undocumented)
+    scope: ip
+    metric: requests_per_minute
+    limit: null
+    burst: null
+    timeFrame: minute
+    applies:
+      - SWAPI REST API (swapi.dev)
+      - SWAPI REST API (swapi.tech)
+    notes: >-
+      No documented numeric limit. Community guidance is to cache responses
+      (the dataset is effectively static) and avoid sustained traffic above
+      a few requests per second.
+recovery:
+  strategy: exponential-backoff
+  initialDelaySeconds: 1
+  maxDelaySeconds: 60
+  honorRetryAfter: true
+caching:
+  recommendation: aggressive
+  notes: >-
+    The SWAPI dataset has not changed materially since 2014. Clients should
+    treat responses as immutable for at least 24 hours and persist them locally
+    for repeated lookups.

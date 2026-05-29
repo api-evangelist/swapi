@@ -1,0 +1,23 @@
+{
+  "operationId": "listPeople",
+  "method": "GET",
+  "path": "/people/",
+  "request": {
+    "search": "luke"
+  },
+  "response": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "name": "Luke Skywalker",
+        "height": "172",
+        "mass": "77",
+        "birth_year": "19BBY",
+        "gender": "male",
+        "url": "https://swapi.dev/api/people/1/"
+      }
+    ]
+  }
+}

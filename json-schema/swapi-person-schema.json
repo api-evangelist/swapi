@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/swapi/main/json-schema/swapi-person-schema.json",
+  "title": "SWAPI Person",
+  "description": "A character from the Star Wars universe.",
+  "type": "object",
+  "required": ["name", "url"],
+  "properties": {
+    "name": {"type": "string", "example": "Luke Skywalker"},
+    "height": {"type": "string", "description": "Height in centimeters.", "example": "172"},
+    "mass": {"type": "string", "description": "Mass in kilograms.", "example": "77"},
+    "hair_color": {"type": "string", "example": "blond"},
+    "skin_color": {"type": "string", "example": "fair"},
+    "eye_color": {"type": "string", "example": "blue"},
+    "birth_year": {"type": "string", "description": "Birth year in the in-universe BBY/ABY system.", "example": "19BBY"},
+    "gender": {"type": "string", "example": "male"},
+    "homeworld": {"type": "string", "format": "uri"},
+    "films": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "species": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "vehicles": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "starships": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "created": {"type": "string", "format": "date-time"},
+    "edited": {"type": "string", "format": "date-time"},
+    "url": {"type": "string", "format": "uri"}
+  }
+}

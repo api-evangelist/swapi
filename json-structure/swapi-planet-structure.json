@@ -1,0 +1,23 @@
+{
+  "name": "Planet",
+  "structure": {
+    "type": "object",
+    "required": ["name", "url"],
+    "properties": {
+      "name": {"type": "string"},
+      "rotation_period": {"type": "string"},
+      "orbital_period": {"type": "string"},
+      "diameter": {"type": "string"},
+      "climate": {"type": "string"},
+      "gravity": {"type": "string"},
+      "terrain": {"type": "string"},
+      "surface_water": {"type": "string"},
+      "population": {"type": "string"},
+      "residents": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "films": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "created": {"type": "string", "format": "date-time"},
+      "edited": {"type": "string", "format": "date-time"},
+      "url": {"type": "string", "format": "uri"}
+    }
+  }
+}

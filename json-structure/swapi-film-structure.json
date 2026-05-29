@@ -1,0 +1,23 @@
+{
+  "name": "Film",
+  "structure": {
+    "type": "object",
+    "required": ["title", "episode_id", "url"],
+    "properties": {
+      "title": {"type": "string", "description": "Title of the film."},
+      "episode_id": {"type": "integer", "description": "Episode number."},
+      "opening_crawl": {"type": "string"},
+      "director": {"type": "string"},
+      "producer": {"type": "string"},
+      "release_date": {"type": "string", "format": "date"},
+      "characters": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "planets": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "starships": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "vehicles": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "species": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "created": {"type": "string", "format": "date-time"},
+      "edited": {"type": "string", "format": "date-time"},
+      "url": {"type": "string", "format": "uri"}
+    }
+  }
+}

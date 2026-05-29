@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/swapi/main/json-schema/swapi-vehicle-schema.json",
+  "title": "SWAPI Vehicle",
+  "description": "A non-hyperdrive vehicle from the Star Wars universe.",
+  "type": "object",
+  "required": ["name", "url"],
+  "properties": {
+    "name": {"type": "string", "example": "Snowspeeder"},
+    "model": {"type": "string"},
+    "manufacturer": {"type": "string"},
+    "cost_in_credits": {"type": "string"},
+    "length": {"type": "string"},
+    "max_atmosphering_speed": {"type": "string"},
+    "crew": {"type": "string"},
+    "passengers": {"type": "string"},
+    "cargo_capacity": {"type": "string"},
+    "consumables": {"type": "string"},
+    "vehicle_class": {"type": "string", "example": "airspeeder"},
+    "pilots": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "films": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "created": {"type": "string", "format": "date-time"},
+    "edited": {"type": "string", "format": "date-time"},
+    "url": {"type": "string", "format": "uri"}
+  }
+}

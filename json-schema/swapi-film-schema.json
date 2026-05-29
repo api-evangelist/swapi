@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/swapi/main/json-schema/swapi-film-schema.json",
+  "title": "SWAPI Film",
+  "description": "A canonical Star Wars film in the SWAPI dataset.",
+  "type": "object",
+  "required": ["title", "episode_id", "url"],
+  "properties": {
+    "title": {"type": "string", "description": "Title of the film.", "example": "A New Hope"},
+    "episode_id": {"type": "integer", "description": "Episode number.", "example": 4},
+    "opening_crawl": {"type": "string", "description": "Opening crawl text shown at the start of the film."},
+    "director": {"type": "string", "description": "Name of the film's director.", "example": "George Lucas"},
+    "producer": {"type": "string", "description": "Comma-separated list of producer names."},
+    "release_date": {"type": "string", "format": "date", "description": "Theatrical release date.", "example": "1977-05-25"},
+    "characters": {"type": "array", "items": {"type": "string", "format": "uri"}, "description": "URLs of characters appearing in this film."},
+    "planets": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "starships": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "vehicles": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "species": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "created": {"type": "string", "format": "date-time"},
+    "edited": {"type": "string", "format": "date-time"},
+    "url": {"type": "string", "format": "uri"}
+  }
+}

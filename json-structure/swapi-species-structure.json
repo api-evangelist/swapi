@@ -1,0 +1,24 @@
+{
+  "name": "Species",
+  "structure": {
+    "type": "object",
+    "required": ["name", "url"],
+    "properties": {
+      "name": {"type": "string"},
+      "classification": {"type": "string"},
+      "designation": {"type": "string"},
+      "average_height": {"type": "string"},
+      "skin_colors": {"type": "string"},
+      "hair_colors": {"type": "string"},
+      "eye_colors": {"type": "string"},
+      "average_lifespan": {"type": "string"},
+      "homeworld": {"type": ["string", "null"], "format": "uri"},
+      "language": {"type": "string"},
+      "people": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "films": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "created": {"type": "string", "format": "date-time"},
+      "edited": {"type": "string", "format": "date-time"},
+      "url": {"type": "string", "format": "uri"}
+    }
+  }
+}

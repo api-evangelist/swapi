@@ -1,0 +1,100 @@
+# SWAPI Vocabulary
+#
+# Controlled vocabulary for the Star Wars API (SWAPI). Maps the six canonical
+# SWAPI resources, their relationships, and the in-universe terms (BBY/ABY,
+# MGLT, hyperdrive rating, parsec) used throughout the dataset.
+vocabulary: swapi
+version: "1.0.0"
+modified: "2026-05-29"
+
+# Top-level subject areas
+domains:
+  - name: Films
+    description: The canonical Star Wars theatrical episodes captured by SWAPI.
+  - name: Characters
+    description: Sentient individuals appearing in one or more films (the People resource).
+  - name: Planets
+    description: Worlds visited or referenced across the saga.
+  - name: Species
+    description: Sentient and non-sentient species native to the Star Wars universe.
+  - name: Starships
+    description: Hyperdrive-capable vessels, from fighters to battle stations.
+  - name: Vehicles
+    description: Atmospheric and ground vehicles without hyperdrive capability.
+
+# Core entities
+entities:
+  Film:
+    description: A canonical Star Wars film, identified by episode_id.
+    properties: [title, episode_id, opening_crawl, director, producer, release_date,
+                 characters, planets, starships, vehicles, species, created, edited, url]
+  Person:
+    description: A character in the Star Wars universe.
+    properties: [name, height, mass, hair_color, skin_color, eye_color, birth_year,
+                 gender, homeworld, films, species, vehicles, starships, created, edited, url]
+  Planet:
+    description: A planet within the Star Wars universe.
+    properties: [name, rotation_period, orbital_period, diameter, climate, gravity,
+                 terrain, surface_water, population, residents, films, created, edited, url]
+  Species:
+    description: A species native to the Star Wars universe.
+    properties: [name, classification, designation, average_height, skin_colors, hair_colors,
+                 eye_colors, average_lifespan, homeworld, language, people, films, created, edited, url]
+  Starship:
+    description: A hyperdrive-capable starship.
+    properties: [name, model, manufacturer, cost_in_credits, length, max_atmosphering_speed,
+                 crew, passengers, cargo_capacity, consumables, hyperdrive_rating, MGLT,
+                 starship_class, pilots, films, created, edited, url]
+  Vehicle:
+    description: A non-hyperdrive vehicle.
+    properties: [name, model, manufacturer, cost_in_credits, length, max_atmosphering_speed,
+                 crew, passengers, cargo_capacity, consumables, vehicle_class, pilots,
+                 films, created, edited, url]
+
+# In-universe terminology
+terms:
+  BBY:
+    description: "Before the Battle of Yavin — the dating epoch used in birth_year (e.g. 19BBY)."
+  ABY:
+    description: "After the Battle of Yavin — the dating epoch used for events post-Episode IV."
+  MGLT:
+    description: "Megalights per standard hour — the canonical sublight speed unit for starships."
+  HyperdriveRating:
+    description: "A smaller number indicates a faster hyperdrive (Class 0.5 is faster than Class 1.0)."
+  Parsec:
+    description: "Cited by Han Solo as a measure for the Kessel Run; in SWAPI it is not a stored field."
+  StarshipClass:
+    description: "Functional classification (Starfighter, Capital Ship, Deep Space Mobile Battlestation, etc.)."
+  VehicleClass:
+    description: "Functional classification (airspeeder, repulsorcraft, walker, wheeled, sail barge, etc.)."
+
+# Cross-resource relationships
+relationships:
+  - subject: Person
+    predicate: appearsIn
+    object: Film
+  - subject: Person
+    predicate: bornOn
+    object: Planet
+  - subject: Person
+    predicate: pilots
+    object: Starship
+  - subject: Person
+    predicate: drives
+    object: Vehicle
+  - subject: Film
+    predicate: features
+    object: Species
+  - subject: Species
+    predicate: nativeTo
+    object: Planet
+  - subject: Planet
+    predicate: hostsResidents
+    object: Person
+
+# Response envelope vocabulary
+envelope:
+  count: "Total number of resources in the collection."
+  next: "URL of the next page, or null."
+  previous: "URL of the previous page, or null."
+  results: "Page of resources (10 per page)."

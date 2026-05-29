@@ -1,0 +1,47 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: SWAPI
+providerId: swapi
+created: '2026-05-29'
+modified: '2026-05-29'
+tags:
+  - Star Wars
+  - Open Source
+  - Public API
+  - Teaching API
+description: >-
+  SWAPI is a free, open, community-maintained read-only API. There is no paid tier
+  and no commercial offering attached to the swapi.dev or swapi.tech mirrors.
+  Donations (PayPal) are accepted by the swapi.tech maintainer; partner discount
+  affiliate links are surfaced in the API root payload. Documented here as a single
+  "free" plan with no usage cost.
+plans:
+  - id: swapi-free
+    name: Free
+    type: free
+    description: >-
+      Free, anonymous, unauthenticated access to all SWAPI resources (films, people,
+      planets, species, starships, vehicles). Read-only. No published quota.
+    entries:
+      - label: API Requests
+        description: All SWAPI endpoints are free of charge.
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: null
+        timeFrame: month
+        geo: global
+        domains:
+          - https://swapi.dev/api
+          - https://www.swapi.tech/api
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+billing:
+  currency: USD
+  model: donation
+  donationUrl: https://www.paypal.com/donate/?business=2HGAUVTWGR5T2
+  notes: >-
+    The swapi.tech maintainer accepts PayPal donations. swapi.dev has no published
+    funding mechanism. Neither mirror charges for API usage.

@@ -1,0 +1,123 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SWAPI — Starships
+  description: >-
+    SWAPI Starships. 2 operations (list + get). Lead operation: List All Starships.
+    Hyperdrive-capable starships from the Star Wars universe.
+    Self-contained Naftiko capability covering one SWAPI business surface.
+  tags:
+    - SWAPI
+    - Star Wars
+    - Starships
+  created: '2026-05-29'
+  modified: '2026-05-29'
+binds:
+  - namespace: env
+    keys: {}
+capability:
+  consumes:
+    - type: http
+      namespace: swapi-starships
+      baseUri: https://swapi.dev/api
+      description: SWAPI — Starships business capability. Self-contained, no shared references.
+      resources:
+        - name: starships
+          path: /starships/
+          operations:
+            - name: listStarships
+              method: GET
+              description: List All Starships
+              inputParameters:
+                - name: search
+                  in: query
+                  type: string
+                  required: false
+                  description: Case-insensitive partial match against the starship name/model.
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: One-based page number for paginated list responses.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+            - name: getStarship
+              method: GET
+              description: Get Starship By Id
+              inputParameters:
+                - name: id
+                  in: path
+                  type: integer
+                  required: true
+                  description: Numeric SWAPI identifier for the starship.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: swapi-starships-rest
+      port: 8080
+      description: REST adapter for SWAPI — Starships. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/starships
+          name: starships
+          description: REST surface for Starships.
+          operations:
+            - method: GET
+              name: listStarships
+              description: List All Starships
+              call: swapi-starships.listStarships
+              with:
+                search: rest.search
+                page: rest.page
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/starships/{id}
+          name: starships-by-id
+          description: REST surface for a single Starship.
+          operations:
+            - method: GET
+              name: getStarship
+              description: Get Starship By Id
+              call: swapi-starships.getStarship
+              with:
+                id: rest.id
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: swapi-starships-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for SWAPI — Starships. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-starships
+          description: List All Starships
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: swapi-starships.listStarships
+          with:
+            search: tools.search
+            page: tools.page
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-starship
+          description: Get Starship By Id
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: swapi-starships.getStarship
+          with:
+            id: tools.id
+          outputParameters:
+            - type: object
+              mapping: $.

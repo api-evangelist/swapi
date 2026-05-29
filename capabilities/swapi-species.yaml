@@ -1,0 +1,123 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SWAPI — Species
+  description: >-
+    SWAPI Species. 2 operations (list + get). Lead operation: List All Species.
+    Sentient and non-sentient species of the Star Wars universe.
+    Self-contained Naftiko capability covering one SWAPI business surface.
+  tags:
+    - SWAPI
+    - Star Wars
+    - Species
+  created: '2026-05-29'
+  modified: '2026-05-29'
+binds:
+  - namespace: env
+    keys: {}
+capability:
+  consumes:
+    - type: http
+      namespace: swapi-species
+      baseUri: https://swapi.dev/api
+      description: SWAPI — Species business capability. Self-contained, no shared references.
+      resources:
+        - name: species
+          path: /species/
+          operations:
+            - name: listSpecies
+              method: GET
+              description: List All Species
+              inputParameters:
+                - name: search
+                  in: query
+                  type: string
+                  required: false
+                  description: Case-insensitive partial match against the species name.
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: One-based page number for paginated list responses.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+            - name: getSpecies
+              method: GET
+              description: Get Species By Id
+              inputParameters:
+                - name: id
+                  in: path
+                  type: integer
+                  required: true
+                  description: Numeric SWAPI identifier for the species.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: swapi-species-rest
+      port: 8080
+      description: REST adapter for SWAPI — Species. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/species
+          name: species
+          description: REST surface for Species.
+          operations:
+            - method: GET
+              name: listSpecies
+              description: List All Species
+              call: swapi-species.listSpecies
+              with:
+                search: rest.search
+                page: rest.page
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/species/{id}
+          name: species-by-id
+          description: REST surface for a single Species.
+          operations:
+            - method: GET
+              name: getSpecies
+              description: Get Species By Id
+              call: swapi-species.getSpecies
+              with:
+                id: rest.id
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: swapi-species-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for SWAPI — Species. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-species
+          description: List All Species
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: swapi-species.listSpecies
+          with:
+            search: tools.search
+            page: tools.page
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-species
+          description: Get Species By Id
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: swapi-species.getSpecies
+          with:
+            id: tools.id
+          outputParameters:
+            - type: object
+              mapping: $.

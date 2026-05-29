@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/swapi/main/json-schema/swapi-species-schema.json",
+  "title": "SWAPI Species",
+  "description": "A species in the Star Wars universe.",
+  "type": "object",
+  "required": ["name", "url"],
+  "properties": {
+    "name": {"type": "string", "example": "Human"},
+    "classification": {"type": "string", "example": "mammal"},
+    "designation": {"type": "string", "example": "sentient"},
+    "average_height": {"type": "string", "example": "180"},
+    "skin_colors": {"type": "string"},
+    "hair_colors": {"type": "string"},
+    "eye_colors": {"type": "string"},
+    "average_lifespan": {"type": "string", "example": "120"},
+    "homeworld": {"type": ["string", "null"], "format": "uri"},
+    "language": {"type": "string", "example": "Galactic Basic"},
+    "people": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "films": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "created": {"type": "string", "format": "date-time"},
+    "edited": {"type": "string", "format": "date-time"},
+    "url": {"type": "string", "format": "uri"}
+  }
+}

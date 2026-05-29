@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/swapi/main/json-schema/swapi-planet-schema.json",
+  "title": "SWAPI Planet",
+  "description": "A planet within the Star Wars universe.",
+  "type": "object",
+  "required": ["name", "url"],
+  "properties": {
+    "name": {"type": "string", "example": "Tatooine"},
+    "rotation_period": {"type": "string", "description": "Standard hours per rotation.", "example": "23"},
+    "orbital_period": {"type": "string", "description": "Standard days per orbit.", "example": "304"},
+    "diameter": {"type": "string", "description": "Diameter in kilometers.", "example": "10465"},
+    "climate": {"type": "string", "example": "arid"},
+    "gravity": {"type": "string", "example": "1 standard"},
+    "terrain": {"type": "string", "example": "desert"},
+    "surface_water": {"type": "string", "description": "Percent of surface that is water.", "example": "1"},
+    "population": {"type": "string", "example": "200000"},
+    "residents": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "films": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "created": {"type": "string", "format": "date-time"},
+    "edited": {"type": "string", "format": "date-time"},
+    "url": {"type": "string", "format": "uri"}
+  }
+}

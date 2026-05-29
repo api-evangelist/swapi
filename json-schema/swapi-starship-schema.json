@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/swapi/main/json-schema/swapi-starship-schema.json",
+  "title": "SWAPI Starship",
+  "description": "A hyperdrive-capable starship.",
+  "type": "object",
+  "required": ["name", "url"],
+  "properties": {
+    "name": {"type": "string", "example": "Death Star"},
+    "model": {"type": "string", "example": "DS-1 Orbital Battle Station"},
+    "manufacturer": {"type": "string"},
+    "cost_in_credits": {"type": "string"},
+    "length": {"type": "string", "description": "Length in meters."},
+    "max_atmosphering_speed": {"type": "string"},
+    "crew": {"type": "string"},
+    "passengers": {"type": "string"},
+    "cargo_capacity": {"type": "string", "description": "Maximum cargo capacity in kilograms."},
+    "consumables": {"type": "string"},
+    "hyperdrive_rating": {"type": "string"},
+    "MGLT": {"type": "string", "description": "Maximum number of Megalights per standard hour."},
+    "starship_class": {"type": "string", "example": "Deep Space Mobile Battlestation"},
+    "pilots": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "films": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "created": {"type": "string", "format": "date-time"},
+    "edited": {"type": "string", "format": "date-time"},
+    "url": {"type": "string", "format": "uri"}
+  }
+}
