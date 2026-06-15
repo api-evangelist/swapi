@@ -1,11 +1,10 @@
 aid: swapi
 name: SWAPI - Star Wars API
 description: >-
-  SWAPI (Star Wars API) is a free, open Star Wars REST API exposing canonical Star Wars
-  data — films, people, planets, species, starships, and vehicles. Originally built by
-  Paul Hallett (@phalt) at swapi.co, it is now maintained as community mirrors at
-  swapi.dev (Python/Django, @juriy) and www.swapi.tech (Node/MongoDB, @semperry).
-  SWAPI is one of the most widely cited "teaching APIs" in the developer ecosystem.
+  SWAPI (Star Wars API) is a free, open Star Wars REST API exposing canonical Star Wars data — films, people, planets,
+  species, starships, and vehicles. Originally built by Paul Hallett (@phalt) at swapi.co, it is now maintained as
+  community mirrors at swapi.dev (Python/Django, @juriy) and www.swapi.tech (Node/MongoDB, @semperry). SWAPI is one of
+  the most widely cited "teaching APIs" in the developer ecosystem.
 url: https://swapi.dev/
 image: https://avatars.githubusercontent.com/u/2014472?s=200
 specificationVersion: '0.20'
@@ -17,112 +16,100 @@ x-tier: 2
 x-tier-reason: enriched-during-pipeline-run
 x-type: opensource
 tags:
+- Star Wars
+- Open Source
+- Teaching API
+- Public API
+- REST
+- GraphQL
+- Entertainment
+- Datasets
+apis:
+- name: SWAPI REST API (swapi.dev)
+  description: >-
+    The primary live REST mirror of SWAPI, maintained by @juriy at swapi.dev. Preserves the canonical SWAPI response
+    shape (count / next / previous / results paginators and flat resource schemas). Six top-level resources: films,
+    people, planets, species, starships, vehicles. Read-only, no authentication required.
+  humanURL: https://swapi.dev/
+  baseURL: https://swapi.dev/api
+  tags:
+  - REST
   - Star Wars
   - Open Source
-  - Teaching API
-  - Public API
-  - REST
-  - GraphQL
-  - Entertainment
-  - Datasets
-apis:
-  - name: SWAPI REST API (swapi.dev)
-    description: >-
-      The primary live REST mirror of SWAPI, maintained by @juriy at swapi.dev. Preserves
-      the canonical SWAPI response shape (count / next / previous / results paginators
-      and flat resource schemas). Six top-level resources: films, people, planets, species,
-      starships, vehicles. Read-only, no authentication required.
-    humanURL: https://swapi.dev/
-    baseURL: https://swapi.dev/api
-    tags:
-      - REST
-      - Star Wars
-      - Open Source
-    properties:
-      - type: Documentation
-        url: https://swapi.dev/documentation
-      - type: OpenAPI
-        url: openapi/swapi-openapi.yml
-      - type: SourceCode
-        url: https://github.com/Juriy/swapi
-      - type: NaftikoCapability
-        url: capabilities/swapi-films.yaml
-      - type: NaftikoCapability
-        url: capabilities/swapi-people.yaml
-      - type: NaftikoCapability
-        url: capabilities/swapi-planets.yaml
-      - type: NaftikoCapability
-        url: capabilities/swapi-species.yaml
-      - type: NaftikoCapability
-        url: capabilities/swapi-starships.yaml
-      - type: NaftikoCapability
-        url: capabilities/swapi-vehicles.yaml
-  - name: SWAPI REST API (swapi.tech)
-    description: >-
-      The Node/MongoDB community rebuild of SWAPI, maintained by @semperry at swapi.tech.
-      Wraps the canonical SWAPI payloads inside `result.properties` envelopes and adds
-      Discord/Reddit community surfaces. Exposes the same six top-level resources
-      (films, people, planets, species, starships, vehicles).
-    humanURL: https://www.swapi.tech/
-    baseURL: https://www.swapi.tech/api
-    tags:
-      - REST
-      - Star Wars
-      - Open Source
-    properties:
-      - type: Documentation
-        url: https://www.swapi.tech/
-      - type: SourceCode
-        url: https://github.com/semperry/swapi
-common:
-  - type: Website
-    url: https://swapi.dev/
-  - type: PublicAPIsListing
-    url: https://github.com/public-apis/public-apis
-  - type: GitHubOrganization
-    url: https://github.com/Juriy/swapi
-  - type: License
-    url: https://github.com/Juriy/swapi/blob/master/LICENSE
-  - type: Tools
-    title: MCP Server (johnpapa)
-    url: https://github.com/johnpapa/mcp-starwars
-  - type: Tools
-    title: MCP Server (olaekdahl)
-    url: https://github.com/olaekdahl/swapi-mcp-server
-  - type: Tools
-    title: MCP Server (glaucia86)
-    url: https://github.com/glaucia86/swapi-mcp-server-app
-  - type: Tools
-    title: MCP Server (Qwizi)
-    url: https://github.com/Qwizi/swapi-mcp
-  - type: SDK
-    title: Android SDK (Oleur)
-    url: https://github.com/Oleur/SWAPI-Android-SDK
-  - type: SDK
-    title: Swift SDK (bratwursted)
-    url: https://github.com/bratwursted/swapi-swift
-  - type: SDK
-    title: R Client (LionyxML)
-    url: https://github.com/LionyxML/r-swapi-client
-  - type: CodeExamples
-    title: Java + Spring Sample
-    url: https://github.com/vininjr/starwars
-  - type: CodeExamples
-    title: Flutter + GraphQL Sample
-    url: https://github.com/kranfix/flutter_graphql_swapi
+  properties:
+  - type: Documentation
+    url: https://swapi.dev/documentation
   - type: OpenAPI
-    title: Community OpenAPI (kamilkodzi)
-    url: https://github.com/kamilkodzi/oas-swapi
-  - type: NaftikoVocabulary
-    url: vocabulary/swapi-vocabulary.yaml
-  - type: JsonLdContext
-    url: json-ld/swapi-context.jsonld
-  - type: SpectralRuleset
-    url: rules/swapi-spectral-rules.yml
-  - type: APICommonsPlans
-    url: plans/swapi-plans-pricing.yml
-  - type: APICommonsRateLimits
-    url: rate-limits/swapi-rate-limits.yml
+    url: openapi/swapi-openapi.yml
+  - type: SourceCode
+    url: https://github.com/Juriy/swapi
+  - url: graphql/swapi-graphql.md
+    type: GraphQL
+- name: SWAPI REST API (swapi.tech)
+  description: >-
+    The Node/MongoDB community rebuild of SWAPI, maintained by @semperry at swapi.tech. Wraps the canonical SWAPI
+    payloads inside `result.properties` envelopes and adds Discord/Reddit community surfaces. Exposes the same six
+    top-level resources (films, people, planets, species, starships, vehicles).
+  humanURL: https://www.swapi.tech/
+  baseURL: https://www.swapi.tech/api
+  tags:
+  - REST
+  - Star Wars
+  - Open Source
+  properties:
+  - type: Documentation
+    url: https://www.swapi.tech/
+  - type: SourceCode
+    url: https://github.com/semperry/swapi
+common:
+- type: Website
+  url: https://swapi.dev/
+- type: PublicAPIsListing
+  url: https://github.com/public-apis/public-apis
+- type: GitHubOrganization
+  url: https://github.com/Juriy/swapi
+- type: License
+  url: https://github.com/Juriy/swapi/blob/master/LICENSE
+- type: Tools
+  title: MCP Server (johnpapa)
+  url: https://github.com/johnpapa/mcp-starwars
+- type: Tools
+  title: MCP Server (olaekdahl)
+  url: https://github.com/olaekdahl/swapi-mcp-server
+- type: Tools
+  title: MCP Server (glaucia86)
+  url: https://github.com/glaucia86/swapi-mcp-server-app
+- type: Tools
+  title: MCP Server (Qwizi)
+  url: https://github.com/Qwizi/swapi-mcp
+- type: SDK
+  title: Android SDK (Oleur)
+  url: https://github.com/Oleur/SWAPI-Android-SDK
+- type: SDK
+  title: Swift SDK (bratwursted)
+  url: https://github.com/bratwursted/swapi-swift
+- type: SDK
+  title: R Client (LionyxML)
+  url: https://github.com/LionyxML/r-swapi-client
+- type: CodeExamples
+  title: Java + Spring Sample
+  url: https://github.com/vininjr/starwars
+- type: CodeExamples
+  title: Flutter + GraphQL Sample
+  url: https://github.com/kranfix/flutter_graphql_swapi
+- type: OpenAPI
+  title: Community OpenAPI (kamilkodzi)
+  url: https://github.com/kamilkodzi/oas-swapi
+- type: NaftikoVocabulary
+  url: vocabulary/swapi-vocabulary.yaml
+- type: JsonLdContext
+  url: json-ld/swapi-context.jsonld
+- type: SpectralRuleset
+  url: rules/swapi-spectral-rules.yml
+- type: APICommonsPlans
+  url: plans/swapi-plans-pricing.yml
+- type: APICommonsRateLimits
+  url: rate-limits/swapi-rate-limits.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

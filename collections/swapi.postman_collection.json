@@ -1,0 +1,1731 @@
+{
+  "item": [
+    {
+      "id": "eff392ce-ca78-4ec3-9717-21b29d65f353",
+      "name": "Films",
+      "description": {
+        "content": "The Star Wars films (theatrical episodes I-VII supported by the canonical dataset).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "97bb3a5b-0d58-4dcc-8c65-3bdaeec943d3",
+          "name": "List All Films",
+          "request": {
+            "name": "List All Films",
+            "description": {
+              "content": "Returns a paginated list of all Star Wars films known to SWAPI.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7cbd319b-e43b-4bad-a212-60ce88e4473f",
+              "name": "A page of films.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"title\": \"A New Hope\",\n      \"episode_id\": 4,\n      \"url\": \"http://fuuRhwjMfyJhPwDi.kepMMLhZMSYa.s2LRoYY8+8pZNcPKwThi5T4Z2DXP0EJORiE7erkcLhTenvVzYgK9p\",\n      \"opening_crawl\": \"string\",\n      \"director\": \"George Lucas\",\n      \"producer\": \"Gary Kurtz, Rick McCallum\",\n      \"release_date\": \"1977-05-25\",\n      \"characters\": [\n        \"https://OehvNQPVpAot.tzzd24lJMMg5e4xXYcL9LkLDoOdpStvB57dbXMoeoGy6a9UKAVwxClzZrup5\",\n        \"http://PoJAlfsTMYQy.utekPsWl1IA0H,Aeo3.FNX93RRsLmW2yIC9qUM+h7M\"\n      ],\n      \"planets\": [\n        \"http://EARFsK.mbpfkHYcW-eA,FqqVKLIbe6V50uQaRhWjD4YVwulEceS\",\n        \"https://dLtUQMIZvsktKgXCMbeFtUUeoD.nfesyKfTSNjlSlhMy\"\n      ],\n      \"starships\": [\n        \"https://QBi.xbuZ76fK+Dv5RL\",\n        \"https://bEKitj.qycuUyUdsBmaxXL8saeviWOMO1FErPHAjOv9NgNrqbrM2R6valiujuT0M9D69RxAug\"\n      ],\n      \"vehicles\": [\n        \"https://ouhNPRTcNGSfbtMkJObjQSambT.hsx43DhQP3FZa2BOtp5z,.9R\",\n        \"https://LsZhUvdSqRXtWTIgmkChhtQDTrE.eiiW.3ruXh6+lxJwVrUCS5ARgiNxKyxA9WgbSRZA9DoGn+LkrqOrv6.Tx6aHfbugNkXjBAKyI6iZm\"\n      ],\n      \"species\": [\n        \"https://AGkI.smqiu2otUTU4LMaKypoXm36Gv0AwMFa4rqwvwbQ1VzhMA-R0dru+HDx\",\n        \"http://FigKQhhENMALitxoRavZYYCnLUUn.xoyqX+Xh4tCXvBDh3yvmx6-U5eTzgQp5JfPAe1t2dizBp-7G2gRvAnrNn9BWLXrhxbUJAUfjO-F6\"\n      ],\n      \"created\": \"1990-05-04T12:31:03.220Z\",\n      \"edited\": \"1958-07-10T02:29:44.858Z\"\n    },\n    {\n      \"title\": \"A New Hope\",\n      \"episode_id\": 4,\n      \"url\": \"https://k.cxv,+f9JZrPWI.Yj3KYISSrqMYFoDQnad22FX6pNMQVFGWpOXQUoQmgkiuNQ8gi5\",\n      \"opening_crawl\": \"string\",\n      \"director\": \"George Lucas\",\n      \"producer\": \"Gary Kurtz, Rick McCallum\",\n      \"release_date\": \"1977-05-25\",\n      \"characters\": [\n        \"https://isaOvQcKePVazVmQdO.scpFxcXw3PUzfN.Wvj0FQ44,tpXPhJKEbVdbUBSfMo8-C.gp2o\",\n        \"https://CPRgcktDXcvDkidG.tfrr6OJBYf1KzL4dOB2z6wCEIGTlSkf8E1YeTAQhUaWd7TUrtRK-30UJGYl1p12oXk-PtECpPW\"\n      ],\n      \"planets\": [\n        \"https://ysjAHSnUjOchJncDinjT.tbxm4dVWVVf7,rdc6+SUkypI-Dr-8K5Q8PN1aIdJ-2C3lfIuIzop3idWRrRJS\",\n        \"http://TvftbIi.diynCi6PClenuo7h8WTbjRctyFJ-\"\n      ],\n      \"starships\": [\n        \"http://WHbDprgqwyaxsGutXfrpFMuluMle.yiYmdqb6iSzG,xqRDuGQH9IyYfTjLV,eht86IoWvM8GJ\",\n        \"https://cHLADdCxEfznBrtDTDRewcDAnqerVzpKw.rcaNrrFc5XqneEW3D-2iiBA2GfOkoe7DCVT7ujZ8Ts0o5TmLaFQ9iB2b03OeWzzvr4B\"\n      ],\n      \"vehicles\": [\n        \"https://hOQ.dfmd-8q7FogWEp0pu,B3hHo,WLQOUfPdf\",\n        \"https://kJoQfGGXoWTu.myapUpuG2MPDJNkmlqpk8\"\n      ],\n      \"species\": [\n        \"http://tXFJZSrrOabarlahUcKLmrnsJ.dfanz,qA4yOyCU449nZEcl-nSGkxj4wyJoBYGRVbWDFpKqfJEEC14\",\n        \"https://jEPFbvfdrUsJxqcJqtgztysnJ.ihzfBpNbyuXK.az+c,SNzmaUmznLEr8U\"\n      ],\n      \"created\": \"1997-05-22T00:42:59.103Z\",\n      \"edited\": \"1984-12-23T16:02:58.321Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "afbabfaf-221d-4b3e-a0ac-1dac4f814f6c",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9f9ebf4-eae0-4720-b428-48f0f99b9b4f",
+          "name": "Get Film By Id",
+          "request": {
+            "name": "Get Film By Id",
+            "description": {
+              "content": "Returns a single film by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "753fdd18-b23c-4747-98f8-de9845b0f64d",
+              "name": "A single film resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"A New Hope\",\n  \"episode_id\": 4,\n  \"url\": \"http://WoNtZLEcSgVMBusjcO.qldkPXLUfPqB-cN7Wu5QgRZ0yPHKPz.W4\",\n  \"opening_crawl\": \"string\",\n  \"director\": \"George Lucas\",\n  \"producer\": \"Gary Kurtz, Rick McCallum\",\n  \"release_date\": \"1977-05-25\",\n  \"characters\": [\n    \"https://ptQMSTLTZSX.qtvRqEEe0ZOdhrU,DS0TAQTD0Qpf8edL9tqfGpW-u-9G\",\n    \"https://NRFuDYKSbYz.btMwd-Y59WOolYS9Gc2TFwVTnSjdR\"\n  ],\n  \"planets\": [\n    \"http://MXXXhfJZyOU.cdsxPb-PQeAEOvFIN30R-yscdOXrAPGf,UVkqO4dmQ6QZ\",\n    \"http://FwtAlbHVAJeGDU.yipTpgB-IudwV+sJWjJNi2f4DoMyzWCK\"\n  ],\n  \"starships\": [\n    \"https://jBlnrsrpRpaRhUopJnQVouyVnUqzYpl.fdC\",\n    \"http://f.jvqqdvouSP0wbOOmPU+QKOXjsddrXc3UD1KXemIRESQQel3fv\"\n  ],\n  \"vehicles\": [\n    \"http://bvBqWLhAERDFnpsOU.bmrYcP-QAS2\",\n    \"http://Cb.tbkReZ6bJfdT,AfDW2ZFw7+k2r2UjaNnwAJiKz.fMEGz0jykN6xqhtGt,zjSEKjp\"\n  ],\n  \"species\": [\n    \"http://EQEuLpZWOwmQjmYLAlnlZrGymyFxCYya.nrsaJZinjCdm.GLrKvQjm\",\n    \"https://SmcmgaWYlOirjTWMbsIqUHfzfJlaWQ.qtqi,BMu5xcZohBQgYmw8SxNt5afcQTPqX6ezlylVc\"\n  ],\n  \"created\": \"1968-05-13T21:12:32.184Z\",\n  \"edited\": \"1946-07-07T04:13:43.004Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97a9b5d9-e9db-4e78-9120-29e58421b50f",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6acc8239-a7bc-4ecd-851d-ceaffa4ebd70",
+      "name": "People",
+      "description": {
+        "content": "Characters from the Star Wars universe (Luke Skywalker, Darth Vader, etc.).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cf99d44e-00de-4c7f-b531-180f278974df",
+          "name": "List All People",
+          "request": {
+            "name": "List All People",
+            "description": {
+              "content": "Returns a paginated list of characters from the Star Wars universe.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36859bb0-9f13-4065-bcb9-5c3978394166",
+              "name": "A page of people.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Luke Skywalker\",\n      \"url\": \"https://bVCXgzrFglwOfPMAOaweyRFseGrVEA.bhfYAvQGZtLwUhPdA.e4pZMZOQjygv8JOQx,WpLEYZ2\",\n      \"height\": \"172\",\n      \"mass\": \"77\",\n      \"hair_color\": \"blond\",\n      \"skin_color\": \"fair\",\n      \"eye_color\": \"blue\",\n      \"birth_year\": \"19BBY\",\n      \"gender\": \"male\",\n      \"homeworld\": \"https://nImdbrIdCsEaKezXlVACfTqXEtIqnYCYD.pprfERYMJMyiYBUDakxrGoGinpU2l0sytyL3QAeLU0-DgjT3mx7clLOkVH3\",\n      \"films\": [\n        \"https://ZnyRUOBYjfyzHTcjbcYGULQ.hflvJCoF3uNO3nsNM4vo+CB.JGwBFku3ba2z8\",\n        \"https://pP.shnyceUGZH+mEeG1Awfecesd32cIoipjtKZ79K8RFedMG\"\n      ],\n      \"species\": [\n        \"http://iT.eflwIuWOkQVU28tJiN6LQOwbaY\",\n        \"http://gGKuItfdvaqCqkjfscPplIS.heFybKBRwmIpP9zQog6kgtEx7uciJxzb0IK9e+ErUD2g1ax\"\n      ],\n      \"vehicles\": [\n        \"https://DNVRAsvIpzFjM.kjgxexCk84T0LwWw2MXSFv4\",\n        \"http://espjWfcopcwmzYCdAvJYSNqNoBUup.gllyZhglrU+KRtucGqQRFzkBiIkRRbA2KvzKINc1AGKRxZ.i9ae0r1eT7,77TYvobHRqQ.tScU+FzlTch2JudfA\"\n      ],\n      \"starships\": [\n        \"http://msVBLfwkRUWCWGpTPltPpuF.yeu.IMi3GSLSkcAFnEyyyy6OjweAhHfvTeVXn-966HGzCPnDe192R4tzbmyGDMoZKJITJZRT0.Uc9R\",\n        \"http://zkKB.jcqPUFojfMkRmiWokPCFngntk0u4ghkFxPj1YfkGp\"\n      ],\n      \"created\": \"1980-12-17T18:30:46.537Z\",\n      \"edited\": \"2010-07-05T23:58:03.656Z\"\n    },\n    {\n      \"name\": \"Luke Skywalker\",\n      \"url\": \"http://DbiqtgLoeFmukkBWhsTQvSkG.mfaenk-UgvDyysc\",\n      \"height\": \"172\",\n      \"mass\": \"77\",\n      \"hair_color\": \"blond\",\n      \"skin_color\": \"fair\",\n      \"eye_color\": \"blue\",\n      \"birth_year\": \"19BBY\",\n      \"gender\": \"male\",\n      \"homeworld\": \"http://pWUVESKFfBQIZtMASsv.xtzs,Gf7tGGQrbaX.pW9YFoz,KcyLOi1v.Kz3Xb+Sy1jFk5m+bcTOOS\",\n      \"films\": [\n        \"http://mcIsxhWFCqbKaSXMSpSmlPaBdl.smtSxNK8u9LAo2w7pAzy2NgfILFTY2CfWQdyy0xW5QngY.pSfUJdxGfN66Ltl9CbJg68ohI32E4i-E\",\n        \"http://HGQEUbpNvOjJYUjVztRTgnViKHwB.savkT03zzw6g4x3f2c80AmLnCgMtIj8JJM7z9Mi+k\"\n      ],\n      \"species\": [\n        \"https://NXWCw.seyGbvYSz1rjLk00z4XWXzKX4QeL5pRtF9x3\",\n        \"https://HgLVNKjAvIVzafQQSavJljxUxHTBmm.ufgZ5MGs1tYwnIrOWE-jmNNQnlJiQt1Nqo\"\n      ],\n      \"vehicles\": [\n        \"https://ymVXsWoztQEEELQVdl.qjaGgDzLC4T+vp17X8GOIGjczupZGG05JuETNFI+bE0pssduGxdEQaynthM\",\n        \"http://UZnMHPxuZBumwruYHrKAhHIAIBkTiuXNQ.yfiobq-.TxOQ28VSuEaJm6VFqm\"\n      ],\n      \"starships\": [\n        \"http://E.urIHwHZhV1aWQSLHDZzmfcT9DAhk,3lsiAMb3HEMV5Uekco9B0Mj2SmEfCPMQJnOQQ\",\n        \"http://hhSrowYgUeVuqfO.dhdosKPRVnwKrlqWZ+l3KBMZoxwqbGLDbCXcSiankjYs5z2ZXk7\"\n      ],\n      \"created\": \"1958-02-01T16:53:40.369Z\",\n      \"edited\": \"2024-07-07T05:16:25.501Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2e2f91a-8793-4ecb-af86-ab665aa7c276",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4245c4ba-b4d2-4ecb-aaf8-b37774caa385",
+          "name": "Get Person By Id",
+          "request": {
+            "name": "Get Person By Id",
+            "description": {
+              "content": "Returns a single Star Wars character by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1577b3b7-4c66-4d44-8de5-4c12a7c9b68b",
+              "name": "A single person resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Luke Skywalker\",\n  \"url\": \"http://tazECXfFpOwwpjQzhEeQl.uepzHcJF2e.Z7DB0IMnBQxs0A,FfeDtE79Rmu5VeUEa8KylxPWb3QwQW40m8\",\n  \"height\": \"172\",\n  \"mass\": \"77\",\n  \"hair_color\": \"blond\",\n  \"skin_color\": \"fair\",\n  \"eye_color\": \"blue\",\n  \"birth_year\": \"19BBY\",\n  \"gender\": \"male\",\n  \"homeworld\": \"http://tWAWpjQVCaiSHHgXn.xvqfvsUhFeOHeVdD68AJWFdvBavSl69\",\n  \"films\": [\n    \"https://jfjtQeknjR.zlfrzj3UEWXnrRlXcsiEo6m.EOXiKktqNvgjRmC7IiL48Lo2JJV0IM9Mbe.\",\n    \"https://NnhnlNUBKQWFKvERndBywhsANtYMt.shgyrrKz,x-Vr\"\n  ],\n  \"species\": [\n    \"https://UVNoDXbYTauBch.mwVi4ds6NdKkPo0O,tOJ,WanRZWcnRi9x6ooTUQgBtxEKC0,IL\",\n    \"https://cfJCLrMsdieBhngIFcJOtwBgpIHH.piyoL8RmKUz6VFHdzX+PnigceY\"\n  ],\n  \"vehicles\": [\n    \"http://osKLbIsN.lqImv1a44U7CKaSTT3lRsctpgf7XHNpTi5T7sBy-tV8BIXtDoRPwqiPyhb\",\n    \"http://gmpTMVlLpFfiPyYPRcLpLElsZWSp.fpszq7jmSAvu\"\n  ],\n  \"starships\": [\n    \"https://rKiSaocUcqROvKCDqL.iqdZueMGVpGau0NOnH4kqEzj-RJqyWYhSar5Y,2g7sHzOB7YNqH5s8XnqiXHZI5,HPuizlr+UVkQ\",\n    \"http://GhGCe.pahtM\"\n  ],\n  \"created\": \"2017-03-19T00:24:53.524Z\",\n  \"edited\": \"2007-04-26T17:05:18.956Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba73e332-b36a-4f02-806d-78351eb35641",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "73fc8663-1c0f-4968-aee1-861f770b00b5",
+      "name": "Planets",
+      "description": {
+        "content": "Planets featured across the Star Wars films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1dc7ee6e-9707-4b82-9db2-d9987a22ea4b",
+          "name": "List All Planets",
+          "request": {
+            "name": "List All Planets",
+            "description": {
+              "content": "Returns a paginated list of planets featured in the Star Wars films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "planets",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5743a5e3-7783-4087-bb9e-ae36bc5cf45d",
+              "name": "A page of planets.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Tatooine\",\n      \"url\": \"https://O.ckkzNloN7YgpUmeF+PA3cNhoRA8ef9hgppsPoVbf9Yy35,BVZto8\",\n      \"rotation_period\": \"23\",\n      \"orbital_period\": \"304\",\n      \"diameter\": \"10465\",\n      \"climate\": \"arid\",\n      \"gravity\": \"1 standard\",\n      \"terrain\": \"desert\",\n      \"surface_water\": \"1\",\n      \"population\": \"200000\",\n      \"residents\": [\n        \"https://ngUaQsEtghAhNNibpcL.akzovJxy7\",\n        \"http://sfQO.demfGYz0TVS-HUF7NpO0a2uEM+zbnNGgXpzzY.nrN5lSkFaWwsddc8Yd7+V\"\n      ],\n      \"films\": [\n        \"https://fG.wmA-,Y.H.9rcAvVBCN1VoeQz\",\n        \"https://DDVDeieZbcxQMMv.ugpdsNNskBzSF3BHEMH1gkyaAQ4B1VLR0rXNE0EWFYkJ9gzifEfEDiMAU16shBN8XMq\"\n      ],\n      \"created\": \"1962-05-01T09:13:38.588Z\",\n      \"edited\": \"1956-09-08T09:46:48.580Z\"\n    },\n    {\n      \"name\": \"Tatooine\",\n      \"url\": \"https://Wtl.lxhAz5v2VUio1YPl,UtjUDu+cKc2p.uE+kuaI4SSRYTB3eAPTZRXFFNhbDMJRdO7ZR\",\n      \"rotation_period\": \"23\",\n      \"orbital_period\": \"304\",\n      \"diameter\": \"10465\",\n      \"climate\": \"arid\",\n      \"gravity\": \"1 standard\",\n      \"terrain\": \"desert\",\n      \"surface_water\": \"1\",\n      \"population\": \"200000\",\n      \"residents\": [\n        \"https://qJcdDKqhzOpAWEHrceyBXxwpr.mpN16vxjmPsx,nj5vPhdpUG-BQMGkuP8UzumMZn\",\n        \"http://pxxndgUjAHpUvzjFWCf.wgyoW5XD\"\n      ],\n      \"films\": [\n        \"https://TnJvHdQlziIvMqyqYNqO.vkztk,-7XB0a9pJ1k+ShSz6VKjedzT6R.2ZaYbV2yCC\",\n        \"http://FmOZEYODbTWWOAw.fcrxXfIkuu80sWiiacWMwTQ1nbvHQl3uaBURmnDfgKSdtwfcOEtMcYXFd\"\n      ],\n      \"created\": \"2014-08-14T13:13:38.487Z\",\n      \"edited\": \"1959-06-24T16:25:29.825Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f57707f0-b4b4-4a65-9ab5-ec60b0dde364",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7416710c-5ffd-4048-80d4-3c4b5d0bf088",
+          "name": "Get Planet By Id",
+          "request": {
+            "name": "Get Planet By Id",
+            "description": {
+              "content": "Returns a single planet by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "planets",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6a7c2e7-4ec6-4fc8-aeab-da896c4f7158",
+              "name": "A single planet resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Tatooine\",\n  \"url\": \"https://hRSTiWsRGjxf.hqbSpo4dfpL5KhnEKzhWJrCv-,W4KROBN.i+Lg,\",\n  \"rotation_period\": \"23\",\n  \"orbital_period\": \"304\",\n  \"diameter\": \"10465\",\n  \"climate\": \"arid\",\n  \"gravity\": \"1 standard\",\n  \"terrain\": \"desert\",\n  \"surface_water\": \"1\",\n  \"population\": \"200000\",\n  \"residents\": [\n    \"https://XvXIBIGXBUuwRsgHkGMOcJqzjLwAFpwwB.ftxgs-iLjLiva4-\",\n    \"https://zMXLevpiFKCkeO.tuobwQM46\"\n  ],\n  \"films\": [\n    \"http://AySnMiHDbxFOTVzAzuJGDehsQHYFLMTyQ.yvePgZaYg,SyrfR9ii3IKn.eAx6jXcxRJM\",\n    \"http://ajgF.gumrq4q9H\"\n  ],\n  \"created\": \"1957-01-01T08:07:56.228Z\",\n  \"edited\": \"2021-11-16T11:09:34.708Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3fb71c9-4460-4521-8e74-b21bc31423ab",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b3142df4-67c4-41d0-9ada-aeee73a46dcc",
+      "name": "Species",
+      "description": {
+        "content": "Sentient and non-sentient species of the Star Wars universe.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4683585d-ee4a-4c6b-ab6b-68112bbcb5aa",
+          "name": "List All Species",
+          "request": {
+            "name": "List All Species",
+            "description": {
+              "content": "Returns a paginated list of sentient and non-sentient species of the Star Wars universe.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96e8ae78-4ce7-418a-826b-bdf0c62516b0",
+              "name": "A page of species.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Human\",\n      \"url\": \"http://PsetKTEjmkqoHJYwkYc.xmdccioiCU4F8I2dsqHGS-EYve2nT3ob4A.A6DyLv3rqHTuRWtXT-WvtX9IgHZ\",\n      \"classification\": \"mammal\",\n      \"designation\": \"sentient\",\n      \"average_height\": \"180\",\n      \"skin_colors\": \"string\",\n      \"hair_colors\": \"string\",\n      \"eye_colors\": \"string\",\n      \"average_lifespan\": \"120\",\n      \"homeworld\": \"https://kpEzmdRotUFIGKcMjGgYdIXTnIVylo.afcmOw7MjD0q3JIlWp7V4kX-m7G84f,BUnbuK4G9d.nye3f1kTlG9PZwGu8XYfkRBb\",\n      \"language\": \"Galactic Basic\",\n      \"people\": [\n        \"http://wfWVugZNntmZn.iixNPz3Xu00aGpnWZJU5pTdBNVUUIsJ3MCtE5deRbQvpyIS\",\n        \"http://chmCaeHpTjaBJhSh.abbmlK1DVnXzGYDP90AWxnQJNq6AGcYQA9bE7rZCKB986t\"\n      ],\n      \"films\": [\n        \"http://GaSotxQ.ynheYRPysZEzJfohjV+U6T0PUt,S7hAragtjRsg5zEn8Rwmn7PuU0+yqm7O\",\n        \"https://zjip.olsuq3x5RmcudcG+ovn9FMcIpwhlIm8sl4CFgGFAJ-AYYhYnhRS.qD4\"\n      ],\n      \"created\": \"1971-11-30T00:26:04.730Z\",\n      \"edited\": \"1977-06-14T12:28:53.164Z\"\n    },\n    {\n      \"name\": \"Human\",\n      \"url\": \"https://GPiPuq.vkcGyTTqxhZXdyvOYDe\",\n      \"classification\": \"mammal\",\n      \"designation\": \"sentient\",\n      \"average_height\": \"180\",\n      \"skin_colors\": \"string\",\n      \"hair_colors\": \"string\",\n      \"eye_colors\": \"string\",\n      \"average_lifespan\": \"120\",\n      \"homeworld\": \"http://mvBRPcjzvXtowDAAD.uloolbucf\",\n      \"language\": \"Galactic Basic\",\n      \"people\": [\n        \"http://sqSXaaEoaVSBoBATeHyoIaxUx.cnwfpAYcco13ogdO0lOlQNiHlDg5Bk2FMhcwLwinY8GJ1RzB256PYhrt9O\",\n        \"https://zyQcjEacGaxrHzTwAwFvIHUrNSzIEFfd.hnipcW9d2Ju-ceYssX0piW1ZRU+c2NEhbky0up.XETmrwTdArJLZd-XawkB\"\n      ],\n      \"films\": [\n        \"https://OhDTJVdmYvxhVvowHY.mgpdvl2+xyJ18W+4NInAxmf0tFgsuIdlXLJfEwOtCisEvQTBOQosjhpgows\",\n        \"https://xYVVDnllXGuhUxhUUbDgyAi.llxURJQFwazlc3LDkoLETOKxKe3kb.qehRpxVYT5TUSR,7Gv0GLj3RAsBJdi+vha\"\n      ],\n      \"created\": \"1958-11-14T02:13:06.384Z\",\n      \"edited\": \"1949-04-21T23:45:47.052Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35517692-c6e3-400d-a0a8-63c84e0d1d5d",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a14cc1b-9837-47af-8e87-8151ee1a2b4f",
+          "name": "Get Species By Id",
+          "request": {
+            "name": "Get Species By Id",
+            "description": {
+              "content": "Returns a single species record by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e62e601-4fdb-47b7-9212-d9b30598fc1f",
+              "name": "A single species resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Human\",\n  \"url\": \"http://XQaEGHDrhyhetTqvYdVTs.hlq+VxCFbYeVGMTedYG8Nfb0wuARkPArSUvvqwtmGjV3JFDkx\",\n  \"classification\": \"mammal\",\n  \"designation\": \"sentient\",\n  \"average_height\": \"180\",\n  \"skin_colors\": \"string\",\n  \"hair_colors\": \"string\",\n  \"eye_colors\": \"string\",\n  \"average_lifespan\": \"120\",\n  \"homeworld\": \"https://mXHP.vrw8HL0DEHmfrwpTa\",\n  \"language\": \"Galactic Basic\",\n  \"people\": [\n    \"https://pMurLWVOtImxQVwITWlMbKm.naqjNUahzNi0Fx+jflmgprPIiEExE6PtowIFhfr3mpfyS4zl\",\n    \"https://axkHRJ.nfenPmc6pglD5nU3vVsh7zpFghIujDsZRWL0,K\"\n  ],\n  \"films\": [\n    \"https://PhmreMSxsBisrQMckfK.rdqj5VFEHwj11YTG4Efmtaw2rQo1Lw7pELwzVvl,wyxYEFhnJfr\",\n    \"http://ZyYMUYuFsXI.xdP454QVELXqecduZYI2\"\n  ],\n  \"created\": \"1991-11-01T17:16:47.825Z\",\n  \"edited\": \"1960-09-02T16:42:15.548Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c41f02a4-88d6-42d2-8463-261ecc313c20",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "463ae429-a842-40c6-b5ba-0130ade4a424",
+      "name": "Starships",
+      "description": {
+        "content": "Hyperdrive-capable starships (X-wings, Star Destroyers, Death Stars).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "db0fc882-7256-4afd-8293-346788da2690",
+          "name": "List All Starships",
+          "request": {
+            "name": "List All Starships",
+            "description": {
+              "content": "Returns a paginated list of hyperdrive-capable starships.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starships",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0737065e-0c08-4a0c-b45b-4d08b6537473",
+              "name": "A page of starships.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Death Star\",\n      \"url\": \"http://xyUMttkOEgqqqiRTzPUNbdqyQpd.diptMHswLPvSG\",\n      \"model\": \"DS-1 Orbital Battle Station\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"hyperdrive_rating\": \"string\",\n      \"MGLT\": \"string\",\n      \"starship_class\": \"Deep Space Mobile Battlestation\",\n      \"pilots\": [\n        \"http://plQNlduYycfRejssBxHbBoozGQrVNQydd.szmWgiO\",\n        \"http://cmZJy.jniaW9ikNDuEzas,mUCmsPIuFCdGPNyv01-0cLtvWpaBvzo4wHNUpV-yPz.7g2zOijb+QqTKGSQocO7\"\n      ],\n      \"films\": [\n        \"http://PoqqzqpcnvdvQSL.bolxtAnbxLCKfiYrFVnuYpAq\",\n        \"https://AdbXaF.snv6yH5cnmD\"\n      ],\n      \"created\": \"2010-03-17T10:57:52.905Z\",\n      \"edited\": \"1950-09-17T00:16:06.664Z\"\n    },\n    {\n      \"name\": \"Death Star\",\n      \"url\": \"http://HuZHFaELSeTPnJDTGiY.ypl38VOhrlp+fpaECYWIlk3gOp0aGuH+4Ilm8pw6u0RcERbR+FNLFdoxO7ygWGdt5DcgNJSJ3S5q6\",\n      \"model\": \"DS-1 Orbital Battle Station\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"hyperdrive_rating\": \"string\",\n      \"MGLT\": \"string\",\n      \"starship_class\": \"Deep Space Mobile Battlestation\",\n      \"pilots\": [\n        \"https://MgoPLGONcnJNNzVXvhKOcyTINPEwJRV.iytaKzLT8jxg-GFi5J6atrXrA8oHVMyKRopl2\",\n        \"http://BR.slblGFcmD5Akhx0DeKVw\"\n      ],\n      \"films\": [\n        \"http://rHVRHKXsGmkUs.ciCJ3hATVMpW-LdIj\",\n        \"https://bDFZjsTfgOVsOhpnbGbJI.lotFKWPg.ehKxjg1L-csFZH3L4xzCNS,4GyyaIfeudtHFYlFadQviiBzeodfosp\"\n      ],\n      \"created\": \"1946-12-13T12:00:29.780Z\",\n      \"edited\": \"1972-08-19T00:56:41.554Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2f36199-ca07-4710-afc7-cf68d330dbde",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "396b8f23-e0c5-43e5-93fa-6dc063851cb3",
+          "name": "Get Starship By Id",
+          "request": {
+            "name": "Get Starship By Id",
+            "description": {
+              "content": "Returns a single starship by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starships",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bbf6a58e-4da2-43d1-a758-8c1117659055",
+              "name": "A single starship resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Death Star\",\n  \"url\": \"https://S.hdauIqE4ystAVWo\",\n  \"model\": \"DS-1 Orbital Battle Station\",\n  \"manufacturer\": \"string\",\n  \"cost_in_credits\": \"string\",\n  \"length\": \"string\",\n  \"max_atmosphering_speed\": \"string\",\n  \"crew\": \"string\",\n  \"passengers\": \"string\",\n  \"cargo_capacity\": \"string\",\n  \"consumables\": \"string\",\n  \"hyperdrive_rating\": \"string\",\n  \"MGLT\": \"string\",\n  \"starship_class\": \"Deep Space Mobile Battlestation\",\n  \"pilots\": [\n    \"https://XBEfIfwkAgxTqS.akYXmiAIhk65EW4FUswdJksct6G,bLYgMC4\",\n    \"https://jANBmlxVtWIlyFragNCyUNsoK.kkHUavJKxZ.dYmK\"\n  ],\n  \"films\": [\n    \"http://rWaVatrpx.mckcv4,K02a,2dMI12e2RycRx6jim7e,xEWu4586\",\n    \"https://FALcCDtsXXnVzveOMjrH.vvgndvIr,zCkz0I9ktCN8HF.FsFOOO.jtlQdRbRQzfJ3T77m\"\n  ],\n  \"created\": \"1951-09-10T16:45:58.480Z\",\n  \"edited\": \"2021-09-15T16:55:47.288Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "438ebeea-c1dc-4ba3-aaae-7679f965846b",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3a6077fe-b50b-40d6-9e3c-48f62359d049",
+      "name": "Vehicles",
+      "description": {
+        "content": "Non-hyperdrive vehicles (AT-ATs, snowspeeders, sand crawlers).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5f7bc3ae-af15-41f8-825a-fdca1aba739f",
+          "name": "List All Vehicles",
+          "request": {
+            "name": "List All Vehicles",
+            "description": {
+              "content": "Returns a paginated list of non-hyperdrive vehicles.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "901c06c2-3c67-4479-86d7-2d74573d693d",
+              "name": "A page of vehicles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Snowspeeder\",\n      \"url\": \"http://muHBcMxOYPnBMBNMdBzuFJoJnyAjA.nfgH8tJ4M9ULQDR,2C,g5cMmlaJ9Ci1ln3PRVgIWx6.W\",\n      \"model\": \"string\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"vehicle_class\": \"airspeeder\",\n      \"pilots\": [\n        \"https://nVFStrvpiqVWbdxymtRinVpz.kafno9l8kTWD2qbXcH2BNwaxURLuBca0NWGQil52kO1C5Sw9D2I7Va05O8vYcMzr4392Y\",\n        \"https://UitLTVIrHlvWAQl.mpmJFqRHLQ6C6,TJguBD4hXhwLLGAmjn2SBx28\"\n      ],\n      \"films\": [\n        \"http://WPx.edvgb,FxACs7DQ8PEr1,\",\n        \"https://JWqucCNDXznXE.cwqyyn3PEp+ldswfV+S-2vf.fO-,AiX8haCPYXyq\"\n      ],\n      \"created\": \"1977-08-27T18:33:43.293Z\",\n      \"edited\": \"2013-04-06T11:33:16.081Z\"\n    },\n    {\n      \"name\": \"Snowspeeder\",\n      \"url\": \"http://or.olUu-,UxCLi0Efc9AUNKlXYSxspXIRjchCrJJJCGfBJQqZdA3Zx\",\n      \"model\": \"string\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"vehicle_class\": \"airspeeder\",\n      \"pilots\": [\n        \"http://aawcUpVpPzqLcPQYJhmT.gbu39xCjJ6.tl\",\n        \"http://i.pecOO-U5g7bs50HB.HFEYVxfHMTT\"\n      ],\n      \"films\": [\n        \"https://LJXWiKIknoFXgfsCYYKDwYsDgC.urtbaDsovEwOCb,NIizkH\",\n        \"https://TcUAIZsp.fvcE0MssR21rnBY\"\n      ],\n      \"created\": \"2010-09-13T10:56:48.284Z\",\n      \"edited\": \"2019-06-22T13:41:25.564Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4ee63bf-8dce-4061-be38-6246ff5d2eca",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30bbce8f-6e2f-49b5-ad2f-bd6bbe151be0",
+          "name": "Get Vehicle By Id",
+          "request": {
+            "name": "Get Vehicle By Id",
+            "description": {
+              "content": "Returns a single vehicle by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "127e6f79-030b-49af-9882-2eb37205a730",
+              "name": "A single vehicle resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Snowspeeder\",\n  \"url\": \"http://vVPFxDJSpRdwqnYqGCAHCmStbvAXl.urQ\",\n  \"model\": \"string\",\n  \"manufacturer\": \"string\",\n  \"cost_in_credits\": \"string\",\n  \"length\": \"string\",\n  \"max_atmosphering_speed\": \"string\",\n  \"crew\": \"string\",\n  \"passengers\": \"string\",\n  \"cargo_capacity\": \"string\",\n  \"consumables\": \"string\",\n  \"vehicle_class\": \"airspeeder\",\n  \"pilots\": [\n    \"https://s.flega1nRsXCb1nmaps6Lk+UsLJN3mJf25gcl.7JliHDVAEL38ubvL5JLVoDA4SJBfA\",\n    \"https://GdHoDTmCAADCCqMHoa.tgVo1Cw40fnr\"\n  ],\n  \"films\": [\n    \"https://C.vaiOLW+noB8e9EmcIOUiLVdp\",\n    \"https://aIVBhEpbxnkSZOoOEUtZjAo.ffkI1vi6bePeA.vK08VKhggDdFRfvUkU79UW3hVMYse,+f9bcFw.8Fd3P4amy31qnd\"\n  ],\n  \"created\": \"2019-08-14T06:17:36.218Z\",\n  \"edited\": \"2022-11-11T08:00:57.326Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6fac88b-214e-4188-9a79-2a52b66e0d69",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://swapi.dev/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f15490b7-3a40-4312-8f24-2ab84831493a",
+    "name": "SWAPI - Star Wars API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n\n\nContact Support:\n Name: SWAPI Community",
+      "type": "text/plain"
+    }
+  }
+}

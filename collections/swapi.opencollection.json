@@ -1,0 +1,322 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SWAPI - Star Wars API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Films",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Films",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/films/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of all Star Wars films known to SWAPI."
+        },
+        {
+          "info": {
+            "name": "Get Film By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/films/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single film by its numeric SWAPI id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All People",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/people/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of characters from the Star Wars universe."
+        },
+        {
+          "info": {
+            "name": "Get Person By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/people/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single Star Wars character by its numeric SWAPI id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Planets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Planets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/planets/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of planets featured in the Star Wars films."
+        },
+        {
+          "info": {
+            "name": "Get Planet By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/planets/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single planet by its numeric SWAPI id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Species",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Species",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/species/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of sentient and non-sentient species of the Star Wars universe."
+        },
+        {
+          "info": {
+            "name": "Get Species By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/species/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single species record by its numeric SWAPI id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Starships",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Starships",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/starships/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of hyperdrive-capable starships."
+        },
+        {
+          "info": {
+            "name": "Get Starship By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/starships/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single starship by its numeric SWAPI id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Vehicles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Vehicles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/vehicles/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of non-hyperdrive vehicles."
+        },
+        {
+          "info": {
+            "name": "Get Vehicle By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/vehicles/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single vehicle by its numeric SWAPI id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
