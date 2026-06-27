@@ -82,13 +82,13 @@ common:
 - type: Tools
   title: MCP Server (Qwizi)
   url: https://github.com/Qwizi/swapi-mcp
-- type: SDK
+- type: SDKs
   title: Android SDK (Oleur)
   url: https://github.com/Oleur/SWAPI-Android-SDK
-- type: SDK
+- type: SDKs
   title: Swift SDK (bratwursted)
   url: https://github.com/bratwursted/swapi-swift
-- type: SDK
+- type: SDKs
   title: R Client (LionyxML)
   url: https://github.com/LionyxML/r-swapi-client
 - type: CodeExamples
@@ -100,9 +100,9 @@ common:
 - type: OpenAPI
   title: Community OpenAPI (kamilkodzi)
   url: https://github.com/kamilkodzi/oas-swapi
-- type: NaftikoVocabulary
+- type: X-NaftikoVocabulary
   url: vocabulary/swapi-vocabulary.yaml
-- type: JsonLdContext
+- type: JSONLDContext
   url: json-ld/swapi-context.jsonld
 - type: SpectralRuleset
   url: rules/swapi-spectral-rules.yml
