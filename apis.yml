@@ -62,6 +62,8 @@ apis:
   - type: SourceCode
     url: https://github.com/semperry/swapi
 common:
+- type: DomainSecurity
+  url: security/swapi-domain-security.yml
 - type: Website
   url: https://swapi.dev/
 - type: PublicAPIsListing
