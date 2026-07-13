@@ -1,46 +1,44 @@
-# SWAPI Spectral Ruleset
+# swapi — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
 #
-# Enforces conventions observed in the SWAPI (Star Wars API) OpenAPI specification.
-#
-# Convention summary (dominant patterns):
-#   OpenAPI version : 3.0.3
-#   Title prefix    : "SWAPI"
-#   Path casing     : lowercase, plural nouns, trailing slash (Django convention)
-#   OperationId     : camelCase (listFoo / getFoo)
-#   Parameter names : snake_case
-#   Schema props    : snake_case
-#   Security        : none (public read-only API)
-#   Required errors : 404
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - path-params-casing: snake @ 100% (n=6)
+#   - query-params-casing: snake @ 100% (n=12)
+#   - operationid-casing: camel @ 100% (n=12)
+#   - schema-names-casing: pascal @ 100% (n=14)
+#   - schema-properties-casing: snake @ 99% (n=97)
+#   - error-schema-defined: Error
+#   - operation-documents-404: 100% adherence
+#   - pagination params observed: ['page']
+#   - merge: kept 34 existing, added 5 measured, upgraded 0
+#   - added: path-params-casing, query-params-casing, schema-names-casing, schema-properties-casing, error-schema-defined
 extends:
   - spectral:oas
-formats:
-  - oas3
 rules:
-
-  # ─── INFO / METADATA ───────────────────────────────────────────────────────────
   info-title-swapi-prefix:
     description: API title MUST begin with "SWAPI".
-    message: "{{property}} must start with 'SWAPI' (e.g. 'SWAPI - Star Wars API')."
+    message: '{{property}} must start with ''SWAPI'' (e.g. ''SWAPI - Star Wars API'').'
     severity: warn
     given: $.info.title
     then:
       function: pattern
       functionOptions:
-        match: "^SWAPI"
-
+        match: ^SWAPI
   info-description-required:
     description: API description MUST be present and non-trivial.
-    message: "{{property}} description is required (min 30 chars)."
+    message: '{{property}} description is required (min 30 chars).'
     severity: warn
     given: $.info
     then:
-      - field: description
-        function: truthy
-      - field: description
-        function: length
-        functionOptions:
-          min: 30
-
+    - field: description
+      function: truthy
+    - field: description
+      function: length
+      functionOptions:
+        min: 30
   info-version-required:
     description: API version MUST be defined.
     severity: error
@@ -48,7 +46,6 @@ rules:
     then:
       field: version
       function: truthy
-
   info-contact-required:
     description: A contact block (community channel) MUST be defined.
     severity: info
@@ -56,7 +53,6 @@ rules:
     then:
       field: contact
       function: truthy
-
   info-license-required:
     description: A license SHOULD be declared (SWAPI is open source).
     severity: warn
@@ -64,8 +60,6 @@ rules:
     then:
       field: license
       function: truthy
-
-  # ─── OPENAPI VERSION ───────────────────────────────────────────────────────────
   openapi-version-3-0-x:
     description: OpenAPI version MUST be 3.0.x.
     severity: warn
@@ -73,16 +67,13 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^3\\.0\\."
-
-  # ─── SERVERS ───────────────────────────────────────────────────────────────────
+        match: ^3\.0\.
   servers-defined:
     description: At least one server entry MUST be defined.
     severity: error
     given: $.servers
     then:
       function: truthy
-
   servers-https:
     description: Every server URL MUST use HTTPS.
     severity: error
@@ -90,8 +81,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
-
+        match: ^https://
   servers-have-description:
     description: Each server entry SHOULD have a description.
     severity: warn
@@ -99,8 +89,6 @@ rules:
     then:
       field: description
       function: truthy
-
-  # ─── PATHS — NAMING CONVENTIONS ────────────────────────────────────────────────
   paths-lowercase:
     description: Path segments MUST be lowercase.
     severity: error
@@ -108,17 +96,16 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^/[a-z0-9/{}_-]*$"
-
+        match: ^/[a-z0-9/{}_-]*$
   paths-plural-resources:
-    description: Top-level resource collections SHOULD use plural nouns (films, people, planets, species, starships, vehicles).
+    description: Top-level resource collections SHOULD use plural nouns (films, people, planets, species,
+      starships, vehicles).
     severity: info
     given: $.paths.*~
     then:
       function: pattern
       functionOptions:
-        match: "^/(films|people|planets|species|starships|vehicles)(/|/\\{id\\}/)?$"
-
+        match: ^/(films|people|planets|species|starships|vehicles)(/|/\{id\}/)?$
   paths-no-query-string:
     description: Paths MUST NOT include query strings.
     severity: error
@@ -126,9 +113,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        notMatch: "\\?"
-
-  # ─── OPERATIONS ────────────────────────────────────────────────────────────────
+        notMatch: \?
   operation-operationid-required:
     description: Every operation MUST have an operationId.
     severity: error
@@ -136,7 +121,6 @@ rules:
     then:
       field: operationId
       function: truthy
-
   operation-operationid-camelcase:
     description: operationId MUST be camelCase.
     severity: warn
@@ -144,8 +128,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^[a-z][a-zA-Z0-9]*$"
-
+        match: ^[a-z][a-zA-Z0-9]*$
   operation-summary-required:
     description: Every operation MUST have a summary.
     severity: error
@@ -153,7 +136,6 @@ rules:
     then:
       field: summary
       function: truthy
-
   operation-summary-title-case:
     description: Operation summaries SHOULD use Title Case.
     severity: warn
@@ -161,8 +143,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^[A-Z][A-Za-z0-9 -]*$"
-
+        match: ^[A-Z][A-Za-z0-9 -]*$
   operation-description-required:
     description: Every operation MUST have a description.
     severity: warn
@@ -170,7 +151,6 @@ rules:
     then:
       field: description
       function: truthy
-
   operation-tags-required:
     description: Every operation MUST be tagged.
     severity: error
@@ -178,8 +158,6 @@ rules:
     then:
       field: tags
       function: truthy
-
-  # ─── TAGS ──────────────────────────────────────────────────────────────────────
   tag-global-defined:
     description: Tags MUST be defined at the document root.
     severity: warn
@@ -187,7 +165,6 @@ rules:
     then:
       field: tags
       function: truthy
-
   tag-description-required:
     description: Each global tag SHOULD have a description.
     severity: warn
@@ -195,7 +172,6 @@ rules:
     then:
       field: description
       function: truthy
-
   tag-title-case:
     description: Tag names MUST use Title Case.
     severity: warn
@@ -203,9 +179,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^[A-Z][A-Za-z ]*$"
-
-  # ─── PARAMETERS ────────────────────────────────────────────────────────────────
+        match: ^[A-Z][A-Za-z ]*$
   parameter-description-required:
     description: Every parameter MUST have a description.
     severity: warn
@@ -213,40 +187,35 @@ rules:
     then:
       field: description
       function: truthy
-
   parameter-snake-case:
-    description: Parameter names SHOULD be snake_case (SWAPI convention is single-word lowercase, e.g. `search`, `page`, `id`).
+    description: Parameter names SHOULD be snake_case (SWAPI convention is single-word lowercase, e.g.
+      `search`, `page`, `id`).
     severity: warn
     given: $.paths[*][*].parameters[*].name
     then:
       function: pattern
       functionOptions:
-        match: "^[a-z][a-z0-9_]*$"
-
+        match: ^[a-z][a-z0-9_]*$
   parameter-pagination-page:
     description: Pagination parameter MUST be named `page` (SWAPI convention).
     severity: info
-    given: "$.paths[*][*].parameters[?(@.in=='query' && (@.name=='offset' || @.name=='limit' || @.name=='cursor'))]"
+    given: $.paths[*][*].parameters[?(@.in=='query' && (@.name=='offset' || @.name=='limit' || @.name=='cursor'))]
     then:
       function: falsy
-
-  # ─── RESPONSES ─────────────────────────────────────────────────────────────────
   response-success-required:
     description: Every operation MUST declare a 2xx response.
     severity: error
     given: $.paths[*][*].responses
     then:
-      field: "200"
+      field: '200'
       function: truthy
-
   response-404-required:
     description: GET operations on resource detail paths MUST declare a 404 response.
     severity: warn
-    given: "$.paths[?(@property.match(/\\{id\\}/))][get].responses"
+    given: $.paths[?(@property.match(/\{id\}/))][get].responses
     then:
-      field: "404"
+      field: '404'
       function: truthy
-
   response-description-required:
     description: Every response MUST have a description.
     severity: warn
@@ -254,7 +223,6 @@ rules:
     then:
       field: description
       function: truthy
-
   response-content-json:
     description: Responses with content SHOULD use application/json.
     severity: warn
@@ -262,8 +230,6 @@ rules:
     then:
       field: application/json
       function: truthy
-
-  # ─── SCHEMAS — PROPERTY NAMING ────────────────────────────────────────────────
   schema-property-snake-case:
     description: Schema property names MUST be snake_case (the SWAPI wire format convention).
     severity: warn
@@ -271,8 +237,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^[a-z][a-z0-9_]*$|^[A-Z]+$"
-
+        match: ^[a-z][a-z0-9_]*$|^[A-Z]+$
   schema-types-defined:
     description: Schema properties MUST declare a `type`.
     severity: warn
@@ -280,20 +245,19 @@ rules:
     then:
       field: type
       function: truthy
-
   schema-canonical-fields:
-    description: Resource schemas MUST include `created`, `edited`, and `url` (SWAPI canonical envelope fields).
+    description: Resource schemas MUST include `created`, `edited`, and `url` (SWAPI canonical envelope
+      fields).
     severity: info
-    given: "$.components.schemas[?(@property=='Film' || @property=='Person' || @property=='Planet' || @property=='Species' || @property=='Starship' || @property=='Vehicle')].properties"
+    given: $.components.schemas[?(@property=='Film' || @property=='Person' || @property=='Planet' || @property=='Species'
+      || @property=='Starship' || @property=='Vehicle')].properties
     then:
-      - field: created
-        function: truthy
-      - field: edited
-        function: truthy
-      - field: url
-        function: truthy
-
-  # ─── HTTP METHOD CONVENTIONS ──────────────────────────────────────────────────
+    - field: created
+      function: truthy
+    - field: edited
+      function: truthy
+    - field: url
+      function: truthy
   get-no-request-body:
     description: GET operations MUST NOT have a request body.
     severity: error
@@ -301,19 +265,58 @@ rules:
     then:
       field: requestBody
       function: falsy
-
-  # ─── GENERAL QUALITY ──────────────────────────────────────────────────────────
   no-empty-descriptions:
     description: Descriptions MUST NOT be empty.
     severity: warn
-    given: "$..description"
+    given: $..description
     then:
       function: truthy
-
   external-docs-encouraged:
     description: Top-level externalDocs SHOULD be defined.
     severity: info
     given: $
     then:
       field: externalDocs
+      function: truthy
+  path-params-casing:
+    description: Path parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: snake
+  query-params-casing:
+    description: Query parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: snake
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  error-schema-defined:
+    description: A shared error schema (Error) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: Error
       function: truthy
