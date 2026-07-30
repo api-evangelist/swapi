@@ -6,6 +6,18 @@ description: >-
   community mirrors at swapi.dev (Python/Django, @juriy) and www.swapi.tech (Node/MongoDB, @semperry). SWAPI is one of
   the most widely cited "teaching APIs" in the developer ecosystem.
 url: https://swapi.dev/
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://avatars.githubusercontent.com/u/2014472?s=200
 specificationVersion: '0.20'
 created: '2026-05-28'
@@ -25,31 +37,11 @@ tags:
 - Entertainment
 - Datasets
 apis:
-- name: SWAPI REST API (swapi.dev)
-  description: >-
-    The primary live REST mirror of SWAPI, maintained by @juriy at swapi.dev. Preserves the canonical SWAPI response
-    shape (count / next / previous / results paginators and flat resource schemas). Six top-level resources: films,
-    people, planets, species, starships, vehicles. Read-only, no authentication required.
-  humanURL: https://swapi.dev/
-  baseURL: https://swapi.dev/api
-  tags:
-  - REST
-  - Star Wars
-  - Open Source
-  properties:
-  - type: Documentation
-    url: https://swapi.dev/documentation
-  - type: OpenAPI
-    url: openapi/swapi-openapi.yml
-  - type: SourceCode
-    url: https://github.com/Juriy/swapi
-  - url: graphql/swapi-graphql.md
-    type: GraphQL
 - name: SWAPI REST API (swapi.tech)
   description: >-
-    The Node/MongoDB community rebuild of SWAPI, maintained by @semperry at swapi.tech. Wraps the canonical SWAPI
-    payloads inside `result.properties` envelopes and adds Discord/Reddit community surfaces. Exposes the same six
-    top-level resources (films, people, planets, species, starships, vehicles).
+    The Node/MongoDB community rebuild of SWAPI, maintained by @semperry at swapi.tech. Wraps the canonical
+    SWAPI payloads inside `result.properties` envelopes and adds Discord/Reddit community surfaces. Exposes
+    the same six top-level resources (films, people, planets, species, starships, vehicles).
   humanURL: https://www.swapi.tech/
   baseURL: https://www.swapi.tech/api
   tags:
@@ -61,6 +53,102 @@ apis:
     url: https://www.swapi.tech/
   - type: SourceCode
     url: https://github.com/semperry/swapi
+- aid: swapi:swapi-films-api
+  name: SWAPI - Star Wars API Films API
+  description: The Star Wars films (theatrical episodes I-VII supported by the canonical dataset).
+  humanURL: https://swapi.dev/
+  baseURL: https://swapi.dev/api
+  tags:
+  - Films
+  properties:
+  - type: OpenAPI
+    url: openapi/swapi-films-api-openapi.yml
+  - type: Documentation
+    url: https://swapi.dev/documentation
+  - type: SourceCode
+    url: https://github.com/Juriy/swapi
+  - type: GraphQL
+    url: graphql/swapi-graphql.md
+- aid: swapi:swapi-people-api
+  name: SWAPI - Star Wars API People API
+  description: Characters from the Star Wars universe (Luke Skywalker, Darth Vader, etc.).
+  humanURL: https://swapi.dev/
+  baseURL: https://swapi.dev/api
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/swapi-people-api-openapi.yml
+  - type: Documentation
+    url: https://swapi.dev/documentation
+  - type: SourceCode
+    url: https://github.com/Juriy/swapi
+  - type: GraphQL
+    url: graphql/swapi-graphql.md
+- aid: swapi:swapi-planets-api
+  name: SWAPI - Star Wars API Planets API
+  description: Planets featured across the Star Wars films.
+  humanURL: https://swapi.dev/
+  baseURL: https://swapi.dev/api
+  tags:
+  - Planets
+  properties:
+  - type: OpenAPI
+    url: openapi/swapi-planets-api-openapi.yml
+  - type: Documentation
+    url: https://swapi.dev/documentation
+  - type: SourceCode
+    url: https://github.com/Juriy/swapi
+  - type: GraphQL
+    url: graphql/swapi-graphql.md
+- aid: swapi:swapi-species-api
+  name: SWAPI - Star Wars API Species API
+  description: Sentient and non-sentient species of the Star Wars universe.
+  humanURL: https://swapi.dev/
+  baseURL: https://swapi.dev/api
+  tags:
+  - Species
+  properties:
+  - type: OpenAPI
+    url: openapi/swapi-species-api-openapi.yml
+  - type: Documentation
+    url: https://swapi.dev/documentation
+  - type: SourceCode
+    url: https://github.com/Juriy/swapi
+  - type: GraphQL
+    url: graphql/swapi-graphql.md
+- aid: swapi:swapi-starships-api
+  name: SWAPI - Star Wars API Starships API
+  description: Hyperdrive-capable starships (X-wings, Star Destroyers, Death Stars).
+  humanURL: https://swapi.dev/
+  baseURL: https://swapi.dev/api
+  tags:
+  - Starships
+  properties:
+  - type: OpenAPI
+    url: openapi/swapi-starships-api-openapi.yml
+  - type: Documentation
+    url: https://swapi.dev/documentation
+  - type: SourceCode
+    url: https://github.com/Juriy/swapi
+  - type: GraphQL
+    url: graphql/swapi-graphql.md
+- aid: swapi:swapi-vehicles-api
+  name: SWAPI - Star Wars API Vehicles API
+  description: Non-hyperdrive vehicles (AT-ATs, snowspeeders, sand crawlers).
+  humanURL: https://swapi.dev/
+  baseURL: https://swapi.dev/api
+  tags:
+  - Vehicles
+  properties:
+  - type: OpenAPI
+    url: openapi/swapi-vehicles-api-openapi.yml
+  - type: Documentation
+    url: https://swapi.dev/documentation
+  - type: SourceCode
+    url: https://github.com/Juriy/swapi
+  - type: GraphQL
+    url: graphql/swapi-graphql.md
 common:
 - type: AgenticAccess
   url: agentic-access/swapi-agentic-access.yml
