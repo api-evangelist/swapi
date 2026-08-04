@@ -1,0 +1,24 @@
+{
+  "provider": "swapi",
+  "sources": [
+    "swapi-films-api-openapi.yml",
+    "swapi-people-api-openapi.yml",
+    "swapi-planets-api-openapi.yml",
+    "swapi-species-api-openapi.yml",
+    "swapi-starships-api-openapi.yml",
+    "swapi-vehicles-api-openapi.yml"
+  ],
+  "outputs": [
+    "swapi-films-api-openapi.yml",
+    "swapi-people-api-openapi.yml",
+    "swapi-planets-api-openapi.yml",
+    "swapi-species-api-openapi.yml",
+    "swapi-starships-api-openapi.yml",
+    "swapi-vehicles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
