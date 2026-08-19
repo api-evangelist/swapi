@@ -1,0 +1,306 @@
+{
+  "item": [
+    {
+      "id": "53d054af-515d-403e-8163-ce69b6fde558",
+      "name": "Films",
+      "description": {
+        "content": "The Star Wars films (theatrical episodes I-VII supported by the canonical dataset).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fdfe830b-cde8-4452-a79e-571ce7c489f0",
+          "name": "List All Films",
+          "request": {
+            "name": "List All Films",
+            "description": {
+              "content": "Returns a paginated list of all Star Wars films known to SWAPI.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94ee7a08-5c9f-437f-ae51-dffce7d5db1d",
+              "name": "A page of films.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"title\": \"A New Hope\",\n      \"episode_id\": 4,\n      \"url\": \"https://f.ewoxyfwNSOtIOFqpVL6uaMNMATf0bO6M\",\n      \"opening_crawl\": \"string\",\n      \"director\": \"George Lucas\",\n      \"producer\": \"Gary Kurtz, Rick McCallum\",\n      \"release_date\": \"1977-05-25\",\n      \"characters\": [\n        \"https://viVycSQTqketNdeUqQoLABWxdCbQgu.yqrGMgt1mVBXN7Cm8+xidNj6Sm5OHh8wq6XBixTEs9C8u9PtKSaX17VNovCf6NFJF1.IVcxt\",\n        \"https://NQDSIZzlzLNbkFL.bdubHyHxGICOHpu-P5Gi-gy2idXc7T6QhI5ORjnp3\"\n      ],\n      \"planets\": [\n        \"https://SIOaBnjGNqcA.rmyCsKxXkHzHgeF8Y9N-DR98mMxqrb,b4MLN\",\n        \"https://hXacuhIdLUsqZII.zugGDTnrHeV\"\n      ],\n      \"starships\": [\n        \"https://utPXenyUukmqHtRX.rajcaPpDiNGkuWS.W7Zc0SCijysxkQiEHVtBY+UdP,CSq\",\n        \"http://nRPHxTmNUatIqgrEZiCz.eyrnIPCClRh2AcItovRV7Pf.ZSMzJEyRwwrf4Uqt\"\n      ],\n      \"vehicles\": [\n        \"http://edTTOozDqSFiFpDQTe.wwtfso2EjssGgw4LUpw.hYRH7VqzpcRZlHubZgCbKWxOJwWompXnIm3.WdovMSwBO645gsb-7fOx,\",\n        \"http://IhhJmiPZalWaorshw.rfaiKnNmty36end4agoVdcVXZ55VJk34pJzv4ugxpqK\"\n      ],\n      \"species\": [\n        \"https://AjmY.vzr.a7gIchA,PfoG03m.4,Dkx9izHRDQA37tVPL,g8bkrRplGJ15iygDbG\",\n        \"http://bIHhHbkoGVqOpYr.sfAUY1cohAw2Bpp1G7KNY\"\n      ],\n      \"created\": \"1979-09-23T06:27:42.350Z\",\n      \"edited\": \"1952-02-23T09:07:09.040Z\"\n    },\n    {\n      \"title\": \"A New Hope\",\n      \"episode_id\": 4,\n      \"url\": \"https://khYvHMtnJXPswYvIQJpgKkOY.vnZHE1ijyw5Lnsk-RrdrubCK9MQMDxJsCPWa+-Cws\",\n      \"opening_crawl\": \"string\",\n      \"director\": \"George Lucas\",\n      \"producer\": \"Gary Kurtz, Rick McCallum\",\n      \"release_date\": \"1977-05-25\",\n      \"characters\": [\n        \"https://dFormqSTJyWjMwEDCtmsNvSKUFyEnWnA.hcEv8m+6VL0xUj6P.mNjGurevoSaSpVOdx5LaXKpRl15zE2IUpp+H7qwS0vgXNzU9Fa,\",\n        \"https://AjdXogDCwbfinKOHvNHEbAQjLu.sxswVkmeUrMwTWMAz6pUXRZnIYXfko.\"\n      ],\n      \"planets\": [\n        \"https://sMESxlFsQoQP.guzsUk5LmHNSR1uc4ZZbeK1idZPn9tBexNS-6EWW,puiGQ7CHbAMRk7qJj0qdRVClEzp81A6ZObH86LTWVZMWAEHDavEr5\",\n        \"http://ZgiDSlgsbLXvTh.ezIfmqVYOB95J6LS\"\n      ],\n      \"starships\": [\n        \"http://BrSZBZILipovtqaQBtCoIe.ajmSzDTi+OTF+gEuOhkXFgU3bqIIJcZ14k.\",\n        \"http://JSTwODNYBHTiDyEHqHLGGn.piB630L.zvlF4fQ,dLjQcBqxvXZFB.M+mJGhFwmGVF3E\"\n      ],\n      \"vehicles\": [\n        \"http://FPEbBp.yhgpDdUEOpHqHSrLDuOeeVpZiPLiA9ft3saXU\",\n        \"http://OUWGozlDMZ.vnniKihMbp,\"\n      ],\n      \"species\": [\n        \"https://rcBAEfSd.vmuwo1uAs\",\n        \"https://RwmYEqtBsilQjB.lzyPBgCEuPIMOxUaHXyhETSfvGzpqlBmTPAyoWtYQkaD9sJQFL8w3El82JYGmO8.JjP1koKvy2kWRbHFSurLmY9xT\"\n      ],\n      \"created\": \"1956-03-22T12:02:08.700Z\",\n      \"edited\": \"1992-08-15T20:00:14.916Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee80130b-c6c6-4469-a795-536b46fef191",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "830e63c4-ee89-4fdc-bbfb-0ebc5eeb74c2",
+          "name": "Get Film By Id",
+          "request": {
+            "name": "Get Film By Id",
+            "description": {
+              "content": "Returns a single film by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fed818aa-ce15-4082-bf9b-fdf4b37c3f4e",
+              "name": "A single film resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"A New Hope\",\n  \"episode_id\": 4,\n  \"url\": \"http://ODvDOj.znzlTxndCq\",\n  \"opening_crawl\": \"string\",\n  \"director\": \"George Lucas\",\n  \"producer\": \"Gary Kurtz, Rick McCallum\",\n  \"release_date\": \"1977-05-25\",\n  \"characters\": [\n    \"http://CKFHDgZivqhjuF.tvR334zXkZBEfGw7PZPRpQWnucEi6exfTkxACxzWVNfnsTFT\",\n    \"http://MTiWVPWURQonhzFMsjnCky.gfysMnrxmlr904EDNsHSYUEuG,ruFgADXbwhOGxmfAaPudIYgVOL\"\n  ],\n  \"planets\": [\n    \"https://ICMSNhOWVAK.zelMXcLk5+rBCWAIH.Mq0r2EvaVAYhwiu+YSD1Qt2NpwuDTB\",\n    \"http://byISSLPwUZhY.gpjRx3kiuXaNogU8QfA2qeAMsIjTjDw87EbLSlRv+3smH1gGC2F2OkpoI\"\n  ],\n  \"starships\": [\n    \"http://LTWpVKlYuf.fenLGnu+xYqOgVlXzg-Xg69iKWyjy0qhRE5uOmvSYGLR-uSuDqJhawnjK1BW5D8DJGWAAzqeOF\",\n    \"https://YnIsDevydfzkWAqlrSZWCDEzURXw.czteyrZBgy4-lKR3qibyj0ERHWoz1wYSEfNA\"\n  ],\n  \"vehicles\": [\n    \"http://xybmraLGucVZOCb.xlvbM\",\n    \"http://esR.rpzzstEfVJA3cv1xa.oLCOCZQyc0qkGOf2\"\n  ],\n  \"species\": [\n    \"https://hlYkwgbLfKTTVHETThlItsRohBM.votSS3y9jwaA6HxqFi-bhWQ9URAJB03FyffGHpPLdyfe03E\",\n    \"http://iLMVWXWAMgZeDaaAwHuTvdXhVuB.hqhmN0oc\"\n  ],\n  \"created\": \"1952-10-07T04:36:05.768Z\",\n  \"edited\": \"2025-08-28T20:43:24.557Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dedb27d1-1ae4-4af3-a573-865f481331e3",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://swapi.dev/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2aaf18c5-a438-4000-8f15-b1c7655fbb70",
+    "name": "SWAPI - Star Wars Films API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n\n\nContact Support:\n Name: SWAPI Community",
+      "type": "text/plain"
+    }
+  }
+}

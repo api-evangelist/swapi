@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SWAPI - Star Wars Films Starships API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Starships",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Starships",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/starships/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of hyperdrive-capable starships."
+        },
+        {
+          "info": {
+            "name": "Get Starship By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/starships/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single starship by its numeric SWAPI id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

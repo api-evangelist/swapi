@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SWAPI - Star Wars Films Planets API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Planets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Planets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/planets/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of planets featured in the Star Wars films."
+        },
+        {
+          "info": {
+            "name": "Get Planet By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/planets/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single planet by its numeric SWAPI id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

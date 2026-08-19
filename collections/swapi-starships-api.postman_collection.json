@@ -1,0 +1,306 @@
+{
+  "item": [
+    {
+      "id": "e5ef7312-9ecd-4e91-8d1f-947aefe90784",
+      "name": "Starships",
+      "description": {
+        "content": "Hyperdrive-capable starships (X-wings, Star Destroyers, Death Stars).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "608842a6-d4b5-4fda-8e94-dea8637f11fc",
+          "name": "List All Starships",
+          "request": {
+            "name": "List All Starships",
+            "description": {
+              "content": "Returns a paginated list of hyperdrive-capable starships.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starships",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ef6db55a-0d69-41f8-9456-b56863e77926",
+              "name": "A page of starships.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Death Star\",\n      \"url\": \"https://n.kqje,SwMVjPEJ1TJhSI3ZcTC9Rd8iPUZLIcjJAav.-ayic\",\n      \"model\": \"DS-1 Orbital Battle Station\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"hyperdrive_rating\": \"string\",\n      \"MGLT\": \"string\",\n      \"starship_class\": \"Deep Space Mobile Battlestation\",\n      \"pilots\": [\n        \"http://OreENcnHBiaSgnauUeyTICaUmmR.rzHQSLVjHimKDCDft1h.0BOCh04Mjc0\",\n        \"http://GukMvyWl.fgl4Q-daSh2Wbmd9ZLGl1AnX057\"\n      ],\n      \"films\": [\n        \"http://aqlZgtWQyFisVHWerXSmOnSNzsLlqS.zesqsqSnqXqaRMdNLLSKSs+4rnMMSVdbDHhY\",\n        \"http://pLXmfORbxpM.uiYs\"\n      ],\n      \"created\": \"2004-05-26T07:09:10.117Z\",\n      \"edited\": \"2001-09-12T09:30:33.815Z\"\n    },\n    {\n      \"name\": \"Death Star\",\n      \"url\": \"https://UyauNMFdeOPqAfDx.pjcdGvk0-xLBd1simkMrqrFKCJSmpIGIhpCS82\",\n      \"model\": \"DS-1 Orbital Battle Station\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"hyperdrive_rating\": \"string\",\n      \"MGLT\": \"string\",\n      \"starship_class\": \"Deep Space Mobile Battlestation\",\n      \"pilots\": [\n        \"https://ZdgwbIbGesRqOMa.hahK.wfmzp9\",\n        \"http://rXwgKmpFIOQYJzXGggL.cvrgX7wauDKRZD\"\n      ],\n      \"films\": [\n        \"https://knKlCUljuJNgxocUfrHPYouueP.oxYDw6\",\n        \"http://vJUYHHamWQLNS.sjoUrDUlU9fyZ,JLgazN231V6RRN-\"\n      ],\n      \"created\": \"1956-07-05T09:33:52.987Z\",\n      \"edited\": \"2014-08-08T10:36:54.137Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1f87d16-10fb-4de7-9356-d649e023a8cd",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31ab974e-7d34-40f3-9075-819dbc75267f",
+          "name": "Get Starship By Id",
+          "request": {
+            "name": "Get Starship By Id",
+            "description": {
+              "content": "Returns a single starship by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starships",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7c391cc3-d070-41d6-807b-7eb4aeefb623",
+              "name": "A single starship resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Death Star\",\n  \"url\": \"http://NTjCIoDdpWYGpxP.eosuvSZTOGTAHUsIQ7l1-5LO50S.JG0thubiAZ33dY34Hn2rIxFcCmpJdEP5w,u+mkuJa\",\n  \"model\": \"DS-1 Orbital Battle Station\",\n  \"manufacturer\": \"string\",\n  \"cost_in_credits\": \"string\",\n  \"length\": \"string\",\n  \"max_atmosphering_speed\": \"string\",\n  \"crew\": \"string\",\n  \"passengers\": \"string\",\n  \"cargo_capacity\": \"string\",\n  \"consumables\": \"string\",\n  \"hyperdrive_rating\": \"string\",\n  \"MGLT\": \"string\",\n  \"starship_class\": \"Deep Space Mobile Battlestation\",\n  \"pilots\": [\n    \"http://YMseVGSMyTAvQvTi.hcjMYSPK,08Loz4URLI4Oqo-8KP,tLQ2os28w\",\n    \"http://TPysBsSLKHIR.bdhwJWzkb-MBbzosAc,IvunlMkzH2zM04qUUP5XM5zjU84AY92W,OZ2hTI6kJYiFFhDQ9bRaIRm\"\n  ],\n  \"films\": [\n    \"https://n.puieihuSVj6zE-IdrTKGuaJmVkTGFJAlHzHDfhLxRBBQo7TofgQsYzaO9+Ff7jbD\",\n    \"http://XuLsOrSwPsAfPkiedGtXnRPV.cptNWJtt5bEo6TA+CxwchZ\"\n  ],\n  \"created\": \"1984-05-14T07:42:52.346Z\",\n  \"edited\": \"1973-05-28T03:41:40.984Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5759610-a5fe-484c-80f7-479ba9c415a0",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starships",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://swapi.dev/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9809f07a-3221-4e71-92b2-4e61b3a91ee3",
+    "name": "SWAPI - Star Wars Films Starships API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n\n\nContact Support:\n Name: SWAPI Community",
+      "type": "text/plain"
+    }
+  }
+}

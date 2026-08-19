@@ -1,0 +1,306 @@
+{
+  "item": [
+    {
+      "id": "0d6441f9-92d4-41da-b249-eee000d68db9",
+      "name": "Planets",
+      "description": {
+        "content": "Planets featured across the Star Wars films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0069fd69-1ec0-49a8-ae10-6618557ba04d",
+          "name": "List All Planets",
+          "request": {
+            "name": "List All Planets",
+            "description": {
+              "content": "Returns a paginated list of planets featured in the Star Wars films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "planets",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "261bac91-566f-47d0-b4a5-24a470747b69",
+              "name": "A page of planets.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Tatooine\",\n      \"url\": \"http://AOTeRQJvbe.rmtuOI8WVLlLXiZEkYISZaf0nkQARH\",\n      \"rotation_period\": \"23\",\n      \"orbital_period\": \"304\",\n      \"diameter\": \"10465\",\n      \"climate\": \"arid\",\n      \"gravity\": \"1 standard\",\n      \"terrain\": \"desert\",\n      \"surface_water\": \"1\",\n      \"population\": \"200000\",\n      \"residents\": [\n        \"http://wRgQTYgtfTVpvvuqZBQPnkrWbPWsjnbr.vfgzcrEz4vHsvrmAfJxbUALnJMiaHrKu,mM9p3rz\",\n        \"https://UrlgvOXLFUPDwfBaBOSC.ldgopFmsEkKR-ASsDE01VReg14zAcpyV7p7tdp\"\n      ],\n      \"films\": [\n        \"https://AHmriWyFDEJRkIgNu.fky4MbzQ9y0wEhOP5,Lufu1MFKwiPzKzC1jBwxeMx6uUhclV15Dn1hjfJVPoH4eAr1osFpXCGd2VJ\",\n        \"http://FXXnThrqtBNlb.cbEfrVTsh6qp,z+3L\"\n      ],\n      \"created\": \"1991-06-08T03:35:22.585Z\",\n      \"edited\": \"1994-10-16T09:00:38.932Z\"\n    },\n    {\n      \"name\": \"Tatooine\",\n      \"url\": \"https://rhkCsHogDqaecWwsEmtbtqrP.lbzwW-IHeqkA4qSCHiyW0fTgTks9-WEz\",\n      \"rotation_period\": \"23\",\n      \"orbital_period\": \"304\",\n      \"diameter\": \"10465\",\n      \"climate\": \"arid\",\n      \"gravity\": \"1 standard\",\n      \"terrain\": \"desert\",\n      \"surface_water\": \"1\",\n      \"population\": \"200000\",\n      \"residents\": [\n        \"http://iBwqLLOdIOGFtTXvCWOywFxSmN.qmtZvMOCChmvLu.RutUetZgnv.8z\",\n        \"http://xeuomDTriasZpPfiFDxoFem.olkAWilpRsb53EPa4S+Mcz9wtYsPk0r\"\n      ],\n      \"films\": [\n        \"https://aoviMiKnvFZEu.tibtKY3UUjlBnL0WmrRSTOa1pq+tFuhnGzvg7x9,BEMzs7yafEOSfu0CkLDs-,ZD0+eu,Y\",\n        \"http://yhPJfNTeAfipjVwfU.qjoqAJmQPZJTulv\"\n      ],\n      \"created\": \"1985-10-07T00:38:14.296Z\",\n      \"edited\": \"1988-05-01T17:38:57.478Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4102a75e-ecbe-49a2-a16a-3c900bedcd2a",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c147ff04-5d3d-474b-8d4c-d97f01c920e3",
+          "name": "Get Planet By Id",
+          "request": {
+            "name": "Get Planet By Id",
+            "description": {
+              "content": "Returns a single planet by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "planets",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "290a9f45-5083-4e77-991b-d67d6f996f8d",
+              "name": "A single planet resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Tatooine\",\n  \"url\": \"http://eLDFBqfMRfYAGq.evxak24eDbp1yTKQU7B7kDy3+6BKC640NMUagMcF3y7l.OyVEMsrLgF,.QwgIXDkaP,XHb2\",\n  \"rotation_period\": \"23\",\n  \"orbital_period\": \"304\",\n  \"diameter\": \"10465\",\n  \"climate\": \"arid\",\n  \"gravity\": \"1 standard\",\n  \"terrain\": \"desert\",\n  \"surface_water\": \"1\",\n  \"population\": \"200000\",\n  \"residents\": [\n    \"https://PLcGsyn.vvNyXKX6AIV7B8.oAQyzL6\",\n    \"https://tukdTIjioRWci.ukpa\"\n  ],\n  \"films\": [\n    \"https://AtybN.plqooxbvVJa+-Un2vkuWV4-ZK0SGxsRsXo58BLrxuK1Pz6oYTYqaE7BPSGDvQWBdsYlg6TlD\",\n    \"https://RbZaHuXiTUGtKGXCcgAsxBVwpDPYtIzi.vchFZLXBzqYAsALP4,mwbyuqTsfj,jiHSSc,W8ANIFvhn5XQkSn.ghbcGAq2ltyr\"\n  ],\n  \"created\": \"1948-10-09T04:17:17.430Z\",\n  \"edited\": \"2008-12-20T05:45:26.752Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b21ba467-4a72-47ac-8e65-19c5cf980ba4",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planets",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://swapi.dev/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ee2ab83d-d489-40df-816e-c5184f17d929",
+    "name": "SWAPI - Star Wars Films Planets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n\n\nContact Support:\n Name: SWAPI Community",
+      "type": "text/plain"
+    }
+  }
+}

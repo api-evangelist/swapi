@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SWAPI - Star Wars Films People API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All People",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/people/",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Case-insensitive partial match against the resource's main name/title field."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number for paginated list responses (10 items per page)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of characters from the Star Wars universe."
+        },
+        {
+          "info": {
+            "name": "Get Person By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://swapi.dev/api/people/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Numeric SWAPI identifier for the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single Star Wars character by its numeric SWAPI id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,306 @@
+{
+  "item": [
+    {
+      "id": "9a1f5df3-7814-49f4-b1ba-d12e8612ff6f",
+      "name": "Vehicles",
+      "description": {
+        "content": "Non-hyperdrive vehicles (AT-ATs, snowspeeders, sand crawlers).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a5bfd80a-5490-481a-bc15-21facc0ce8c6",
+          "name": "List All Vehicles",
+          "request": {
+            "name": "List All Vehicles",
+            "description": {
+              "content": "Returns a paginated list of non-hyperdrive vehicles.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5841c69c-87f6-49ea-93e6-3b7bb292471a",
+              "name": "A page of vehicles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Snowspeeder\",\n      \"url\": \"http://KGRVRCPQ.lfESfcyPz3ffstVxUWgpjpWci4SFeLgZsqLN6\",\n      \"model\": \"string\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"vehicle_class\": \"airspeeder\",\n      \"pilots\": [\n        \"https://FKACBADFHuiVVLJD.eulpIE,NMzt9SuSnO7PGSVQvR6wEA4WnG0fz4ipJu9xpIAxAfYl+xii\",\n        \"https://FnfPbscPPzjeDyh.yzsjXbL8vC1BUNSwFUl1XVnJK\"\n      ],\n      \"films\": [\n        \"https://XAJxeZxziIqkcIlTRmmxvODd.rzijnMxsw+VgC.kvgMCzk,XtJMxdQFMF,seTb2TOHb55erVFBVBXX9Un1eO\",\n        \"http://jFgtR.fmSvPJ9ysI6qLM-CFCh6tFWE.I7TXxKsQ3VVYVYQr7bMC-pJNP\"\n      ],\n      \"created\": \"2021-10-02T02:12:15.447Z\",\n      \"edited\": \"1968-12-10T07:54:46.573Z\"\n    },\n    {\n      \"name\": \"Snowspeeder\",\n      \"url\": \"https://UBxMEULzJkhur.xcBxF0vABSJr8a5SO7ecGMNipg3N\",\n      \"model\": \"string\",\n      \"manufacturer\": \"string\",\n      \"cost_in_credits\": \"string\",\n      \"length\": \"string\",\n      \"max_atmosphering_speed\": \"string\",\n      \"crew\": \"string\",\n      \"passengers\": \"string\",\n      \"cargo_capacity\": \"string\",\n      \"consumables\": \"string\",\n      \"vehicle_class\": \"airspeeder\",\n      \"pilots\": [\n        \"http://LztCBLBIQojR.sqdqL1nSYlANaUKMJuS-rDUWGTpeNQ3fmepuEnBr58O-lUdgBcW7bfZbWhSKGSylYTTKYzqfbehO\",\n        \"https://LILRXmpZJsHKhmpXc.bnnfS,T9prA.LMnOTmtk71jpb-Ek5CRqsBMfVIBUA9-H1kZsSdKznFcMb50,dZ+.tBn\"\n      ],\n      \"films\": [\n        \"https://fpDRwkrSwyQRbFted.gpOcQXP.jVdVOBURE,mdvqMZeAMlcza\",\n        \"https://jQQIyGOabcGCU.mlDRRO27yd+EXRQJmjoyMErdkIQ4-06TvVsLjOK\"\n      ],\n      \"created\": \"2014-08-20T17:05:00.660Z\",\n      \"edited\": \"1977-10-09T00:52:01.240Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "007766ca-c0fd-4622-a0d1-94c29f1ba2b0",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ebe3a36e-ae4b-4a68-a91e-f34e8035de20",
+          "name": "Get Vehicle By Id",
+          "request": {
+            "name": "Get Vehicle By Id",
+            "description": {
+              "content": "Returns a single vehicle by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd86dfe9-7379-4e12-9f37-8c7f3c8ec82f",
+              "name": "A single vehicle resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Snowspeeder\",\n  \"url\": \"http://UIgTvAiCoGsL.xgtsqd9J2q\",\n  \"model\": \"string\",\n  \"manufacturer\": \"string\",\n  \"cost_in_credits\": \"string\",\n  \"length\": \"string\",\n  \"max_atmosphering_speed\": \"string\",\n  \"crew\": \"string\",\n  \"passengers\": \"string\",\n  \"cargo_capacity\": \"string\",\n  \"consumables\": \"string\",\n  \"vehicle_class\": \"airspeeder\",\n  \"pilots\": [\n    \"https://cvS.ojlKJSyzjRjXJsDu8xn,J,v2pa+plUgz.YUxeScdQ2mAOt+\",\n    \"http://aqkdiTDstlFhRYdMpNrJKA.wirxYcmIy6o0TP0UggwGrhPCaSRw0tq9bEHWzgSxxUBAX6IbU9JANlg\"\n  ],\n  \"films\": [\n    \"http://ZotTlwKnLqUCJBNyDVFi.hryYHcQHpn0NhxgxLHJpO5UunFX1VtHn16ARGjYb.rHAqwaEg6OLVhM\",\n    \"https://zoARyJaqHLuxFLs.hkIZWFysaE+rFeECYmG8Pa-N,H1GJ+Z4rROlONw9V9i.by6Fxz3rhB\"\n  ],\n  \"created\": \"1985-11-15T14:32:18.109Z\",\n  \"edited\": \"1984-09-30T14:44:44.490Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dbdcd8de-a60f-440f-8176-83d9db3137ba",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://swapi.dev/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "48d4f951-0dd8-4400-95d7-4160530e1785",
+    "name": "SWAPI - Star Wars Films Vehicles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n\n\nContact Support:\n Name: SWAPI Community",
+      "type": "text/plain"
+    }
+  }
+}

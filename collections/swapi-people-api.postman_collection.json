@@ -1,0 +1,306 @@
+{
+  "item": [
+    {
+      "id": "1a55dc54-7a2b-436c-bc53-207e65311add",
+      "name": "People",
+      "description": {
+        "content": "Characters from the Star Wars universe (Luke Skywalker, Darth Vader, etc.).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "599065bc-d2e2-49c1-b36e-067165a86ac3",
+          "name": "List All People",
+          "request": {
+            "name": "List All People",
+            "description": {
+              "content": "Returns a paginated list of characters from the Star Wars universe.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fdc1b02b-5205-4e77-855c-8fed46ea1ce5",
+              "name": "A page of people.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Luke Skywalker\",\n      \"url\": \"http://BVo.kregypth,V5iL6c-xzU7gHUrmBl6qjkCjxOFRZMuvAOj1EgHG\",\n      \"height\": \"172\",\n      \"mass\": \"77\",\n      \"hair_color\": \"blond\",\n      \"skin_color\": \"fair\",\n      \"eye_color\": \"blue\",\n      \"birth_year\": \"19BBY\",\n      \"gender\": \"male\",\n      \"homeworld\": \"https://bqmbpPJSZHCmzheeFkYWOgyLwFQQb.soBocW1sM\",\n      \"films\": [\n        \"http://xEAUqopQGlwKI.tleEkNG7TWrN5heKTR.6CNETgqK9tqvZvKe.J387Zu+h4glswJ9HJPKOehs0AU2uGLdVNSOPdthfl,wZ\",\n        \"http://AAyNdpRXbbUd.kahtHbIQcbbB0Z-VmX4p9GOQtLMbXBKhw6Fcg2PfcO3xpWhAgai2D-sI9v1calQZiUIYpUT\"\n      ],\n      \"species\": [\n        \"https://CmVOjualQSdvVVqIvibBTTEcO.njwQZ-sllbk7XdOquuUYWu.HqVOYbs3IlaBTIJGmSG3zwDKq4DPFRKdwbo\",\n        \"https://jIOipoje.zgqpApYwvuliuo6L7Q1+Q4VV-ZxUwBRG4ZlbHbWPJ-rKx.8ipC\"\n      ],\n      \"vehicles\": [\n        \"http://vvqjcoXdndydwUd.pqzLaLC,sUccG.OoWblXtKNh,EU,1zY3\",\n        \"http://ERFOdqvbteYEjefxovdVAQqRdwAnFqFr.wterYIuN6oce-XSRok9qmGMC\"\n      ],\n      \"starships\": [\n        \"https://VJhziIziaHUiwqJAtVWBT.oqjB6MYpeLOswLFEG\",\n        \"http://fUmTpbXgFWYzjffnoyxSUomebCHW.bivptXJ3ir0B1Y1JULPVwKaT2nSUdXzcmbMrETt7\"\n      ],\n      \"created\": \"1982-03-14T19:17:44.805Z\",\n      \"edited\": \"1992-03-06T22:51:02.633Z\"\n    },\n    {\n      \"name\": \"Luke Skywalker\",\n      \"url\": \"http://VkeXayoXMXpwYzodu.ucn0m+yjeicfdTAPKHXV7h0,lD4DCecs\",\n      \"height\": \"172\",\n      \"mass\": \"77\",\n      \"hair_color\": \"blond\",\n      \"skin_color\": \"fair\",\n      \"eye_color\": \"blue\",\n      \"birth_year\": \"19BBY\",\n      \"gender\": \"male\",\n      \"homeworld\": \"http://nlxAnvyPjUUqFwJx.kcowOWzr+HKXkUneYVRfFxvfke9vgZIoQgA-vNTkBjRdFBfVvcqeELB4qsMCK.2M7+YO\",\n      \"films\": [\n        \"http://IyAGFPWQEBLeBSUKm.kzW2zXYoU4QBFh.b1nHr+DTFAIYoGS,sqLFqfaSm\",\n        \"http://dlHjhbLcOBxEWaElSrzQ.pcNUAnb,7gS8KvtqyHO-1D2HaIJAh\"\n      ],\n      \"species\": [\n        \"https://nZZYOLuRnNdPmUBCfGRts.uwmLuKEqTJtGDjZP-s,Jy.yQYjUIVZPHJ86qu.kzhs\",\n        \"http://DurIuhkWhZYPE.tldoxGTx3liO6rwkGxXVe27yIAlmI2O,mc\"\n      ],\n      \"vehicles\": [\n        \"http://mXG.zekltjqfhsaJfsglDIiTecd4nFQpK-t-B8Ln+6lw\",\n        \"https://IGDIn.tjlT.hg0CYFeEsCQZ.7tFRNQvuOP4K7EFQPoz--CK6adhlIfhKA8dMxiZDmth10cE\"\n      ],\n      \"starships\": [\n        \"http://uJUEmiplwWVFZJDEmVDIALPBydWbDt.ukuMYwPPOwbpJjZ371fiC2O5Osi6jHAmJiBKW-jMHyFyWkP0nMEHoLSpNo6GATgYH\",\n        \"http://kcBCGMKVQeQyZnBxAqlG.pryoyjgNeD9akt.jryODE4E4tU4bMd6p\"\n      ],\n      \"created\": \"1963-11-28T16:38:23.053Z\",\n      \"edited\": \"2013-06-12T23:50:10.389Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a44e78c-b945-47d0-8320-f570f3cc76b9",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e4da4b8-c822-4b2c-8a40-ebc72bc89687",
+          "name": "Get Person By Id",
+          "request": {
+            "name": "Get Person By Id",
+            "description": {
+              "content": "Returns a single Star Wars character by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec45e2ee-5f77-4349-92ef-2ef7677f5ac2",
+              "name": "A single person resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Luke Skywalker\",\n  \"url\": \"https://qRLf.cglMdlN2uUIfDa9ePs+TSaoPgblMDEzCJvjYIP8n\",\n  \"height\": \"172\",\n  \"mass\": \"77\",\n  \"hair_color\": \"blond\",\n  \"skin_color\": \"fair\",\n  \"eye_color\": \"blue\",\n  \"birth_year\": \"19BBY\",\n  \"gender\": \"male\",\n  \"homeworld\": \"https://pXUkseqlKqqQuGZBRlqSalA.kifkwfk0FNfgcMAy3S7jEGReT2CvNnCFIbJGq59oyJRbcUKNavtdska-I2\",\n  \"films\": [\n    \"https://fKB.zrKYfmHQRX+P3GFa+CICefcmtRGCCdmQKbA.Aj\",\n    \"https://LxMBXKXnuZjJvPgjM.ykKOZypk\"\n  ],\n  \"species\": [\n    \"https://Pm.mnSF8sdYTJ-uHggooi9SU0wTHtcgHVhnGz3Hl20NSTLYqeL7pmsGzxlodSFdtUGtK.JZP9MQzVg\",\n    \"https://YjiCUgtXJtZhZYRajphp.rvoWD6riTTGchQGH2c68S.GwLTo0sfV+\"\n  ],\n  \"vehicles\": [\n    \"https://WtqrVgcEaFxPIrfMM.uvxfE1quJX\",\n    \"http://lZJrAJIt.iyktFsRSfP6zBDDhnWmQI3RHLBB12xONQdUPBy0W\"\n  ],\n  \"starships\": [\n    \"https://SCHoVgqvT.ykarAqF-UIm5qCI0whCbpaPlL7p+94g7JAWEi\",\n    \"http://HWgctPOewTKuDVm.cwJ.F-8998CDCIuij,\"\n  ],\n  \"created\": \"1957-07-05T01:27:22.755Z\",\n  \"edited\": \"2004-11-24T19:58:23.963Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "36ddf916-bfe7-4718-bdca-30e60af2b75c",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://swapi.dev/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "64544d2c-83d9-429d-b24e-3734897435b9",
+    "name": "SWAPI - Star Wars Films People API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n\n\nContact Support:\n Name: SWAPI Community",
+      "type": "text/plain"
+    }
+  }
+}

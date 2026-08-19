@@ -1,0 +1,306 @@
+{
+  "item": [
+    {
+      "id": "2b425cf7-5dbd-48b1-811a-babb639ca1c0",
+      "name": "Species",
+      "description": {
+        "content": "Sentient and non-sentient species of the Star Wars universe.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dcf76f8d-c4ee-4729-8ef8-07243a8117f1",
+          "name": "List All Species",
+          "request": {
+            "name": "List All Species",
+            "description": {
+              "content": "Returns a paginated list of sentient and non-sentient species of the Star Wars universe.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Case-insensitive partial match against the resource's main name/title field."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "One-based page number for paginated list responses (10 items per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e589386-e3c0-4792-b2cc-e9d2ec954827",
+              "name": "A page of species.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 82,\n  \"results\": [\n    {\n      \"name\": \"Human\",\n      \"url\": \"http://DdvLLVkEAeCseoPZAa.mnqr+YpWV,Jo8RZn-z.a42BaO\",\n      \"classification\": \"mammal\",\n      \"designation\": \"sentient\",\n      \"average_height\": \"180\",\n      \"skin_colors\": \"string\",\n      \"hair_colors\": \"string\",\n      \"eye_colors\": \"string\",\n      \"average_lifespan\": \"120\",\n      \"homeworld\": \"https://SWJqAKXMlvLcpwARyQKmnCrUYBHblMD.rygaCDYsz49KZcMRkyPK+VdwM\",\n      \"language\": \"Galactic Basic\",\n      \"people\": [\n        \"https://HdUXdSYTFmZMryhmhMvSeRAci.ltpv9uHvtXFwdGGOYKww-Khyt\",\n        \"https://akxWSyZzzCxqiHWT.suvhbTyEGYnXw0WX.d5npVv-p01dZtTuPCFjw755sicuvz8A5OdMVOQYCSxT\"\n      ],\n      \"films\": [\n        \"https://qmbDvVaVUUelMkzDnZbW.fqfdMV05K4gg.OvzfHrxM\",\n        \"https://n.vemJ,AnxE,CWzvRvi6oYjzH+JKeNwoL2coshXxHANG3iD9QYRSSi7ZJtXlh49,DqNwhsSGc\"\n      ],\n      \"created\": \"2008-09-26T14:34:32.433Z\",\n      \"edited\": \"2017-01-21T09:20:45.047Z\"\n    },\n    {\n      \"name\": \"Human\",\n      \"url\": \"http://kFY.clTdpPAukO01e4G,Q9SL-ACyDQkLoH5Ux2,94bJ\",\n      \"classification\": \"mammal\",\n      \"designation\": \"sentient\",\n      \"average_height\": \"180\",\n      \"skin_colors\": \"string\",\n      \"hair_colors\": \"string\",\n      \"eye_colors\": \"string\",\n      \"average_lifespan\": \"120\",\n      \"homeworld\": \"https://NYydYmzBghLSOErqbkUxdtWNixwb.zfjvuqP7uk4gf6\",\n      \"language\": \"Galactic Basic\",\n      \"people\": [\n        \"http://VIfVfhF.ewvgUnlnZI3r.\",\n        \"http://oeIVvYjqtkk.dctep5nIkutLhdeZc59jzAY046T,jHw+av.ZoGD+IfJMt4On7u9TmB2MB\"\n      ],\n      \"films\": [\n        \"http://ssYYfw.jwhbp-ulmLn1DTzYORLns6lejwPMzyBuJB0SWQLYCR4guSs7ZLmgziMg,3I1OXGHwDO\",\n        \"https://QDLcTAjcaonJJhsEDVYrgaZBkRAnBCXk.pbUy-ru4LKOKERp4dcvh4gxl6rFSBp\"\n      ],\n      \"created\": \"1953-09-19T03:45:09.544Z\",\n      \"edited\": \"1969-10-31T01:34:09.847Z\"\n    }\n  ],\n  \"next\": \"https://swapi.dev/api/people/?page=2\",\n  \"previous\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6605ac94-38c0-4500-b87d-043d194060d5",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "luke"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "056b2f7a-f37b-4caf-bd56-888ae72eeff5",
+          "name": "Get Species By Id",
+          "request": {
+            "name": "Get Species By Id",
+            "description": {
+              "content": "Returns a single species record by its numeric SWAPI id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric SWAPI identifier for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5879b153-4496-483a-8fe5-4bfd37f04dbb",
+              "name": "A single species resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Human\",\n  \"url\": \"https://BKClsDIfjgpcssMBgRfgYMaSCkIsEp.hmepVVs-g-,\",\n  \"classification\": \"mammal\",\n  \"designation\": \"sentient\",\n  \"average_height\": \"180\",\n  \"skin_colors\": \"string\",\n  \"hair_colors\": \"string\",\n  \"eye_colors\": \"string\",\n  \"average_lifespan\": \"120\",\n  \"homeworld\": \"https://GtARlOUHKQDr.ycyhpKtDX-4Kq1ELzRuEMOYmF.Cpy7xaCXti.LX473SKSJR4V2uglOiHfe-dJF\",\n  \"language\": \"Galactic Basic\",\n  \"people\": [\n    \"https://hRsYpf.nuE,6p9hoSx4Pu0JocPWYchfMG\",\n    \"https://duoblKRYLWQOrNqIXSOPGDAxPVzL.rhfQfNx.lNuLYFU6l-UW7yr6MzH+Ul3omBghYo3EjV0vgNUFiYFdvJzYvrhg2dAA1VfRiCJ6RUn.x83FnXwiEFSRjXgg\"\n  ],\n  \"films\": [\n    \"http://boX.dkrrep2COdwELtviEme2GL43SFy5vsaya7,3-5nK4BNFoo6REhjsS\",\n    \"https://JRolntrbFfLGJSUlaxFibqENvIW.urkK+Y.w1eEMfgyO\"\n  ],\n  \"created\": \"2001-01-30T04:09:08.528Z\",\n  \"edited\": \"2025-01-07T09:52:02.111Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6d0f5b2-0245-4306-8378-f50856be22e8",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric SWAPI identifier for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://swapi.dev/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fb894d32-e297-4511-a728-4b92896bc4ad",
+    "name": "SWAPI - Star Wars Films Species API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n\n\nContact Support:\n Name: SWAPI Community",
+      "type": "text/plain"
+    }
+  }
+}
