@@ -29,6 +29,15 @@ x-tier-reason: enriched-during-pipeline-run
 x-type: opensource
 tags:
 - Star Wars
+- Open-Source
+- Teaching API
+- Public API
+- REST
+- GraphQL
+- Entertainment
+- Datasets
+tags_raw:
+- Star Wars
 - Open Source
 - Teaching API
 - Public API
@@ -47,6 +56,10 @@ apis:
   tags:
   - REST
   - Star Wars
+  - Open-Source
+  tags_raw:
+  - REST
+  - Star Wars
   - Open Source
   properties:
   - type: Documentation
@@ -59,6 +72,8 @@ apis:
   humanURL: https://swapi.dev/
   baseURL: https://swapi.dev/api
   tags:
+  - Film
+  tags_raw:
   - Films
   properties:
   - type: OpenAPI
