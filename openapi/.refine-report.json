@@ -19,6 +19,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "swapi-films-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "swapi-people-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "swapi-planets-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "swapi-species-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "swapi-starships-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "swapi-vehicles-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

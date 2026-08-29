@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: SWAPI - Star Wars Films Species API
   description: "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n"
@@ -65,34 +65,13 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    IdParam:
-      name: id
-      in: path
-      required: true
-      description: Numeric SWAPI identifier for the resource.
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
-    PageParam:
-      name: page
-      in: query
-      required: false
-      description: One-based page number for paginated list responses (10 items per page).
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
-    SearchParam:
-      name: search
-      in: query
-      required: false
-      description: Case-insensitive partial match against the resource's main name/title field.
-      schema:
-        type: string
-        example: luke
   schemas:
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Not found.
     SpeciesList:
       allOf:
       - $ref: '#/components/schemas/Pagination'
@@ -102,34 +81,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Species'
-    Pagination:
-      type: object
-      required:
-      - count
-      - results
-      properties:
-        count:
-          type: integer
-          description: Total number of resources in the collection.
-          example: 82
-        next:
-          type: string
-          nullable: true
-          format: uri
-          description: URL of the next page, or null if this is the last page.
-          example: https://swapi.dev/api/people/?page=2
-        previous:
-          type: string
-          nullable: true
-          format: uri
-          description: URL of the previous page, or null if this is the first page.
-          example: null
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-          example: Not found.
     Species:
       type: object
       description: A species in the Star Wars universe.
@@ -159,9 +110,10 @@ components:
           type: string
           example: '120'
         homeworld:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uri
-          nullable: true
         language:
           type: string
           example: Galactic Basic
@@ -184,6 +136,57 @@ components:
         url:
           type: string
           format: uri
+    Pagination:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          description: Total number of resources in the collection.
+          example: 82
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the next page, or null if this is the last page.
+          example: https://swapi.dev/api/people/?page=2
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the previous page, or null if this is the first page.
+          example: null
+  parameters:
+    SearchParam:
+      name: search
+      in: query
+      required: false
+      description: Case-insensitive partial match against the resource's main name/title field.
+      schema:
+        type: string
+        example: luke
+    PageParam:
+      name: page
+      in: query
+      required: false
+      description: One-based page number for paginated list responses (10 items per page).
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: Numeric SWAPI identifier for the resource.
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
   responses:
     NotFound:
       description: Resource not found.

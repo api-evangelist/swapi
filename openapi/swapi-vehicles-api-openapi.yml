@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: SWAPI - Star Wars Films Vehicles API
   description: "SWAPI (Star Wars API) is a free, open Star Wars REST API. It exposes canonical\nStar Wars data — films, people, planets, species, starships, and vehicles — across\nthe original and prequel trilogies and the Clone Wars era. SWAPI is widely used\nas a teaching API for REST clients, framework demos, MCP server tutorials, and\nJSON parser benchmarks.\n\nTwo community mirrors are commonly used:\n  - swapi.dev   (Python/Django port maintained by @juriy)\n  - www.swapi.tech (Node/MongoDB port maintained by @semperry)\n\nThe original swapi.co project (by Paul Hallett / @phalt) is no longer maintained.\nThis OpenAPI describes the swapi.dev surface, which preserves the canonical SWAPI\nresponse shape (count / next / previous / results paginators and the flat resource\nschemas). The swapi.tech mirror wraps the same payloads inside `result.properties`.\n"
@@ -66,6 +66,12 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Not found.
     Vehicle:
       type: object
       description: A non-hyperdrive vehicle.
@@ -116,15 +122,6 @@ components:
         url:
           type: string
           format: uri
-    VehicleList:
-      allOf:
-      - $ref: '#/components/schemas/Pagination'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/Vehicle'
     Pagination:
       type: object
       required:
@@ -136,33 +133,37 @@ components:
           description: Total number of resources in the collection.
           example: 82
         next:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           description: URL of the next page, or null if this is the last page.
           example: https://swapi.dev/api/people/?page=2
         previous:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           description: URL of the previous page, or null if this is the first page.
           example: null
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-          example: Not found.
+    VehicleList:
+      allOf:
+      - $ref: '#/components/schemas/Pagination'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/Vehicle'
   parameters:
-    IdParam:
-      name: id
-      in: path
-      required: true
-      description: Numeric SWAPI identifier for the resource.
+    SearchParam:
+      name: search
+      in: query
+      required: false
+      description: Case-insensitive partial match against the resource's main name/title field.
       schema:
-        type: integer
-        minimum: 1
-        example: 1
+        type: string
+        example: luke
     PageParam:
       name: page
       in: query
@@ -172,14 +173,15 @@ components:
         type: integer
         minimum: 1
         example: 1
-    SearchParam:
-      name: search
-      in: query
-      required: false
-      description: Case-insensitive partial match against the resource's main name/title field.
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: Numeric SWAPI identifier for the resource.
       schema:
-        type: string
-        example: luke
+        type: integer
+        minimum: 1
+        example: 1
   responses:
     NotFound:
       description: Resource not found.
