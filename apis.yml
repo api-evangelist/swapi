@@ -6,6 +6,18 @@ description: >-
   community mirrors at swapi.dev (Python/Django, @juriy) and www.swapi.tech (Node/MongoDB, @semperry). SWAPI is one of
   the most widely cited "teaching APIs" in the developer ecosystem.
 url: https://swapi.dev/
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: unknown
@@ -165,6 +177,10 @@ apis:
   - type: GraphQL
     url: graphql/swapi-graphql.md
 common:
+- type: IssueTracker
+  url: https://github.com/semperry/swapi/issues
+- type: ContributionGuide
+  url: https://github.com/semperry/swapi/blob/main/CONTRIBUTING.md
 - type: AgenticAccess
   url: agentic-access/swapi-agentic-access.yml
 - type: DomainSecurity
