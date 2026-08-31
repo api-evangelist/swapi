@@ -84,7 +84,7 @@ apis:
   humanURL: https://swapi.dev/
   baseURL: https://swapi.dev/api
   tags:
-  - Film
+  - Films
   tags_raw:
   - Films
   properties:
