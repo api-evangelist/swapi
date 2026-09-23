@@ -1,12 +1,7 @@
 {
   "provider": "swapi",
   "sources": [
-    "swapi-films-api-openapi.yml",
-    "swapi-people-api-openapi.yml",
-    "swapi-planets-api-openapi.yml",
-    "swapi-species-api-openapi.yml",
-    "swapi-starships-api-openapi.yml",
-    "swapi-vehicles-api-openapi.yml"
+    "_ae-authored/swapi-openapi.yml"
   ],
   "outputs": [
     "swapi-films-api-openapi.yml",
@@ -20,13 +15,16 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "swapi-films-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "swapi-people-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "swapi-planets-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "swapi-species-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "swapi-starships-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "swapi-vehicles-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "swapi-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "swapi-films-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swapi-people-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swapi-planets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swapi-species-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swapi-starships-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swapi-vehicles-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
