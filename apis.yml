@@ -41,7 +41,7 @@ x-tier-reason: enriched-during-pipeline-run
 x-type: opensource
 tags:
 - Star Wars
-- Open-Source
+- Open Source
 - Teaching API
 - Public APIs
 - REST
@@ -57,6 +57,7 @@ tags_raw:
 - GraphQL
 - Entertainment
 - Datasets
+- Open-Source
 apis:
 - name: SWAPI REST API (swapi.tech)
   description: >-
@@ -68,11 +69,12 @@ apis:
   tags:
   - REST
   - Star Wars
-  - Open-Source
+  - Open Source
   tags_raw:
   - REST
   - Star Wars
   - Open Source
+  - Open-Source
   properties:
   - type: Documentation
     url: https://www.swapi.tech/
@@ -94,8 +96,6 @@ apis:
     url: https://swapi.dev/documentation
   - type: SourceCode
     url: https://github.com/Juriy/swapi
-  - type: GraphQL
-    url: graphql/swapi-graphql.md
 - aid: swapi:swapi-people-api
   name: SWAPI - Star Wars API People API
   description: Characters from the Star Wars universe (Luke Skywalker, Darth Vader, etc.).
@@ -110,8 +110,6 @@ apis:
     url: https://swapi.dev/documentation
   - type: SourceCode
     url: https://github.com/Juriy/swapi
-  - type: GraphQL
-    url: graphql/swapi-graphql.md
 - aid: swapi:swapi-planets-api
   name: SWAPI - Star Wars API Planets API
   description: Planets featured across the Star Wars films.
@@ -126,8 +124,6 @@ apis:
     url: https://swapi.dev/documentation
   - type: SourceCode
     url: https://github.com/Juriy/swapi
-  - type: GraphQL
-    url: graphql/swapi-graphql.md
 - aid: swapi:swapi-species-api
   name: SWAPI - Star Wars API Species API
   description: Sentient and non-sentient species of the Star Wars universe.
@@ -142,8 +138,6 @@ apis:
     url: https://swapi.dev/documentation
   - type: SourceCode
     url: https://github.com/Juriy/swapi
-  - type: GraphQL
-    url: graphql/swapi-graphql.md
 - aid: swapi:swapi-starships-api
   name: SWAPI - Star Wars API Starships API
   description: Hyperdrive-capable starships (X-wings, Star Destroyers, Death Stars).
@@ -158,8 +152,6 @@ apis:
     url: https://swapi.dev/documentation
   - type: SourceCode
     url: https://github.com/Juriy/swapi
-  - type: GraphQL
-    url: graphql/swapi-graphql.md
 - aid: swapi:swapi-vehicles-api
   name: SWAPI - Star Wars API Vehicles API
   description: Non-hyperdrive vehicles (AT-ATs, snowspeeders, sand crawlers).
@@ -174,8 +166,6 @@ apis:
     url: https://swapi.dev/documentation
   - type: SourceCode
     url: https://github.com/Juriy/swapi
-  - type: GraphQL
-    url: graphql/swapi-graphql.md
 common:
 - type: IssueTracker
   url: https://github.com/semperry/swapi/issues
