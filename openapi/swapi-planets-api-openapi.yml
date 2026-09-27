@@ -66,14 +66,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    SearchParam:
-      name: search
-      in: query
-      required: false
-      description: Case-insensitive partial match against the resource's main name/title field.
-      schema:
-        type: string
-        example: luke
     PageParam:
       name: page
       in: query
@@ -83,6 +75,14 @@ components:
         type: integer
         minimum: 1
         example: 1
+    SearchParam:
+      name: search
+      in: query
+      required: false
+      description: Case-insensitive partial match against the resource's main name/title field.
+      schema:
+        type: string
+        example: luke
     IdParam:
       name: id
       in: path
@@ -93,6 +93,12 @@ components:
         minimum: 1
         example: 1
   schemas:
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Not found.
     PlanetList:
       allOf:
       - $ref: '#/components/schemas/Pagination'
@@ -159,12 +165,6 @@ components:
         url:
           type: string
           format: uri
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-          example: Not found.
     Pagination:
       type: object
       required:
