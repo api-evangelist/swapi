@@ -65,40 +65,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    PageParam:
-      name: page
-      in: query
-      required: false
-      description: One-based page number for paginated list responses (10 items per page).
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
-    SearchParam:
-      name: search
-      in: query
-      required: false
-      description: Case-insensitive partial match against the resource's main name/title field.
-      schema:
-        type: string
-        example: luke
-    IdParam:
-      name: id
-      in: path
-      required: true
-      description: Numeric SWAPI identifier for the resource.
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
   schemas:
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-          example: Not found.
     Pagination:
       type: object
       required:
@@ -123,6 +90,12 @@ components:
           format: uri
           description: URL of the previous page, or null if this is the first page.
           example: null
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Not found.
     Person:
       type: object
       description: A character from the Star Wars universe.
@@ -200,6 +173,33 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Person'
+  parameters:
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: Numeric SWAPI identifier for the resource.
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
+    SearchParam:
+      name: search
+      in: query
+      required: false
+      description: Case-insensitive partial match against the resource's main name/title field.
+      schema:
+        type: string
+        example: luke
+    PageParam:
+      name: page
+      in: query
+      required: false
+      description: One-based page number for paginated list responses (10 items per page).
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
   responses:
     NotFound:
       description: Resource not found.
