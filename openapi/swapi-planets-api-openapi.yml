@@ -147,12 +147,6 @@ components:
           format: uri
           description: URL of the previous page, or null if this is the first page.
           example: null
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-          example: Not found.
     PlanetList:
       allOf:
       - $ref: '#/components/schemas/Pagination'
@@ -162,16 +156,20 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Planet'
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Not found.
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    IdParam:
-      name: id
-      in: path
-      required: true
-      description: Numeric SWAPI identifier for the resource.
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
     SearchParam:
       name: search
       in: query
@@ -189,13 +187,15 @@ components:
         type: integer
         minimum: 1
         example: 1
-  responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: Numeric SWAPI identifier for the resource.
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
 externalDocs:
   description: SWAPI Documentation (swapi.dev)
   url: https://swapi.dev/documentation

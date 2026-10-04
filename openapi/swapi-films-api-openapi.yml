@@ -66,6 +66,30 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Pagination:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          description: Total number of resources in the collection.
+          example: 82
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the next page, or null if this is the last page.
+          example: https://swapi.dev/api/people/?page=2
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the previous page, or null if this is the first page.
+          example: null
     Film:
       type: object
       description: A canonical Star Wars film.
@@ -140,36 +164,6 @@ components:
           type: string
           format: uri
           description: Canonical URL of this resource.
-    Pagination:
-      type: object
-      required:
-      - count
-      - results
-      properties:
-        count:
-          type: integer
-          description: Total number of resources in the collection.
-          example: 82
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL of the next page, or null if this is the last page.
-          example: https://swapi.dev/api/people/?page=2
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL of the previous page, or null if this is the first page.
-          example: null
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-          example: Not found.
     FilmList:
       allOf:
       - $ref: '#/components/schemas/Pagination'
@@ -179,16 +173,20 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Film'
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Not found.
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    IdParam:
-      name: id
-      in: path
-      required: true
-      description: Numeric SWAPI identifier for the resource.
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
     SearchParam:
       name: search
       in: query
@@ -206,13 +204,15 @@ components:
         type: integer
         minimum: 1
         example: 1
-  responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: Numeric SWAPI identifier for the resource.
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
 externalDocs:
   description: SWAPI Documentation (swapi.dev)
   url: https://swapi.dev/documentation

@@ -66,6 +66,15 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    SpeciesList:
+      allOf:
+      - $ref: '#/components/schemas/Pagination'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/Species'
     Pagination:
       type: object
       required:
@@ -151,25 +160,14 @@ components:
         detail:
           type: string
           example: Not found.
-    SpeciesList:
-      allOf:
-      - $ref: '#/components/schemas/Pagination'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/Species'
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    IdParam:
-      name: id
-      in: path
-      required: true
-      description: Numeric SWAPI identifier for the resource.
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
     SearchParam:
       name: search
       in: query
@@ -187,13 +185,15 @@ components:
         type: integer
         minimum: 1
         example: 1
-  responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: Numeric SWAPI identifier for the resource.
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
 externalDocs:
   description: SWAPI Documentation (swapi.dev)
   url: https://swapi.dev/documentation
