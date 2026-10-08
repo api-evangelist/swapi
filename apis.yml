@@ -172,6 +172,10 @@ apis:
   - type: SourceCode
     url: https://github.com/Juriy/swapi
 common:
+- type: Plans
+  url: plans/swapi-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/swapi-rate-limits.yml
 - type: IssueTracker
   url: https://github.com/semperry/swapi/issues
 - type: ContributionGuide
