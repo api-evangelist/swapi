@@ -66,30 +66,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Pagination:
-      type: object
-      required:
-      - count
-      - results
-      properties:
-        count:
-          type: integer
-          description: Total number of resources in the collection.
-          example: 82
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL of the next page, or null if this is the last page.
-          example: https://swapi.dev/api/people/?page=2
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL of the previous page, or null if this is the first page.
-          example: null
     Vehicle:
       type: object
       description: A non-hyperdrive vehicle.
@@ -155,13 +131,30 @@ components:
         detail:
           type: string
           example: Not found.
-  responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Pagination:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          description: Total number of resources in the collection.
+          example: 82
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the next page, or null if this is the last page.
+          example: https://swapi.dev/api/people/?page=2
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the previous page, or null if this is the first page.
+          example: null
   parameters:
     SearchParam:
       name: search
@@ -171,15 +164,6 @@ components:
       schema:
         type: string
         example: luke
-    PageParam:
-      name: page
-      in: query
-      required: false
-      description: One-based page number for paginated list responses (10 items per page).
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
     IdParam:
       name: id
       in: path
@@ -189,6 +173,22 @@ components:
         type: integer
         minimum: 1
         example: 1
+    PageParam:
+      name: page
+      in: query
+      required: false
+      description: One-based page number for paginated list responses (10 items per page).
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 externalDocs:
   description: SWAPI Documentation (swapi.dev)
   url: https://swapi.dev/documentation

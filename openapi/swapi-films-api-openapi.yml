@@ -65,31 +65,34 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    SearchParam:
+      name: search
+      in: query
+      required: false
+      description: Case-insensitive partial match against the resource's main name/title field.
+      schema:
+        type: string
+        example: luke
+    IdParam:
+      name: id
+      in: path
+      required: true
+      description: Numeric SWAPI identifier for the resource.
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
+    PageParam:
+      name: page
+      in: query
+      required: false
+      description: One-based page number for paginated list responses (10 items per page).
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
   schemas:
-    Pagination:
-      type: object
-      required:
-      - count
-      - results
-      properties:
-        count:
-          type: integer
-          description: Total number of resources in the collection.
-          example: 82
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL of the next page, or null if this is the last page.
-          example: https://swapi.dev/api/people/?page=2
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL of the previous page, or null if this is the first page.
-          example: null
     Film:
       type: object
       description: A canonical Star Wars film.
@@ -164,6 +167,36 @@ components:
           type: string
           format: uri
           description: Canonical URL of this resource.
+    Pagination:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          description: Total number of resources in the collection.
+          example: 82
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the next page, or null if this is the last page.
+          example: https://swapi.dev/api/people/?page=2
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL of the previous page, or null if this is the first page.
+          example: null
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Not found.
     FilmList:
       allOf:
       - $ref: '#/components/schemas/Pagination'
@@ -173,12 +206,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Film'
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-          example: Not found.
   responses:
     NotFound:
       description: Resource not found.
@@ -186,33 +213,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-  parameters:
-    SearchParam:
-      name: search
-      in: query
-      required: false
-      description: Case-insensitive partial match against the resource's main name/title field.
-      schema:
-        type: string
-        example: luke
-    PageParam:
-      name: page
-      in: query
-      required: false
-      description: One-based page number for paginated list responses (10 items per page).
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
-    IdParam:
-      name: id
-      in: path
-      required: true
-      description: Numeric SWAPI identifier for the resource.
-      schema:
-        type: integer
-        minimum: 1
-        example: 1
 externalDocs:
   description: SWAPI Documentation (swapi.dev)
   url: https://swapi.dev/documentation
